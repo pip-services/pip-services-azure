@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FBC4A4C1-2181-4FAC-9413-C60C31DF9359}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5B56EFFF-C7C8-48DA-AC4D-7CA27A928D1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{D144AE02-95C7-46D1-A572-EBEE08FA4EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Azure", "src\PipServices.Azure\PipServices.Azure.csproj", "{616316BD-8017-4734-85FD-F5CAA5F2605D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{616316BD-8017-4734-85FD-F5CAA5F2605D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616316BD-8017-4734-85FD-F5CAA5F2605D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616316BD-8017-4734-85FD-F5CAA5F2605D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616316BD-8017-4734-85FD-F5CAA5F2605D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{616316BD-8017-4734-85FD-F5CAA5F2605D} = {5B56EFFF-C7C8-48DA-AC4D-7CA27A928D1F}
+	EndGlobalSection
+EndGlobal
