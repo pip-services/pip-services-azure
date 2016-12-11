@@ -12,7 +12,7 @@ Initial public release
 ### Features
 * **auth** KeyVault client
 * **config** Secure KeyVaultConfigReader
-* **count* AppInsights counters
+* **count** AppInsights counters
 * **log** AppInsights logger
 * **messaging** Azure Storage and Service Bus queues
 
