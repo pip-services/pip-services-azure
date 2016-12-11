@@ -1,0 +1,4 @@
+storage_queue: "queue=testqueue;dead=deadqueue;protocol=https;account_name=xxx;account_key=v2kj6jjam4IDc5I1aaWiNSjd9mZ6FSz5iqAh9sa8tP3Suk4Big+Xr50tmY15aHdTk8eto9nQwblUZOjUC0Mkwg=="
+sb_queue: "queue=testqueue;uri=sb://xxx.servicebus.windows.net/;access_id=RootManageSharedAccessKey;access_key=P642Y7WZmkfjcQAi7fFux+tgEVBsQYlVqiLYrbexwEs="
+sb_topic: "topic=testtopic;uri=sb://xxx.servicebus.windows.net/;access_id=RootManageSharedAccessKey;access_key=P642Y7WZmkfjcQAi7fFux+tgEVBsQYlVqiLYrbexwEs="
+key_vault: "key_vault=xxx;access_id=f0a5eef7-2171-4191-903f-11d6e0910fec;access_key=wcykbZi6ISMbugi3aKdDE+zaeoqj9JR291dxiCOH/Ps="
