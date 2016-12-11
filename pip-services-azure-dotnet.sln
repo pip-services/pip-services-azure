@@ -9,16 +9,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5B56EFFF-C7C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{D144AE02-95C7-46D1-A572-EBEE08FA4EBF}"
 	ProjectSection(SolutionItems) = preProject
-		CHANGELOG.md = CHANGELOG.md
 		doc\Development.md = doc\Development.md
 		doc\Downloads.md = doc\Downloads.md
-		PipServices.Azure.nuspec = PipServices.Azure.nuspec
-		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Azure.Net45", "src\PipServices.Azure.Net45\PipServices.Azure.Net45.csproj", "{616316BD-8017-4734-85FD-F5CAA5F2605D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PipServices.Azure.Net45.Test", "test\PipServices.Azure.Net45.Test\PipServices.Azure.Net45.Test.csproj", "{2B76EAB0-6D5F-4D19-AD0A-07F4B242EBBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{29CD86F4-9929-4DE3-8A21-70906D0BCEC2}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		PipServices.Azure.nuspec = PipServices.Azure.nuspec
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

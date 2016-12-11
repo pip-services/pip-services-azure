@@ -16,7 +16,7 @@ namespace PipServices.Azure.Count
 
         public AppInsightsCounters() { }
 
-        public Descriptor GetDescriptor()
+        public virtual Descriptor GetDescriptor()
         {
             var name = _name ?? "default";
             return new Descriptor("pip-services-azure", "counters", "app-insights", name, "1.0");

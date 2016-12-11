@@ -1,20 +1,20 @@
-# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Data processing and persistence components for .NET
+# <img src="https://github.com/pip-services/pip-services/raw/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> Azure components for .NET
 
 This framework is a part of [Pip.Services](https://github.com/pip-services/pip-services) project.
-It provides implementation of reusable data processing and persistence components
+It provides components built on top of Azure services:
 
-Functionality is divided into few packahes:
-
-- **Memory** - in-memory persistence
-- **File** - file persistence
-- **MongoDB** - MongoDB persistence
+- **Auth** - KeyVault credential provider
+- **Config** - KeyVault secure config reader
+- **Count** - AppInsights performance counter
+- **Log** - AppInsights logger
+- **Messaging** - Azure Storage and Azure Service Bus message queues
 
 Quick Links:
 
-* [Downloads](https://github.com/pip-services/pip-services-data-dotnet/blob/master/doc/Downloads.md)
-* [API Reference](http://htmlpreview.github.io/?https://github.com/pip-services/pip-services-data-dotnet/blob/master/doc/api/index.html)
-* [Building and Testing](https://github.com/pip-services/pip-services-data-dotnet/blob/master/doc/Development.md)
-* [Contributing](https://github.com/pip-services/pip-services-data-dotnet/blob/master/doc/Development.md/#contrib)
+* [Downloads](https://github.com/pip-services/pip-services-azure-dotnet/blob/master/doc/Downloads.md)
+* [API Reference](http://htmlpreview.github.io/?https://github.com/pip-services/pip-services-azure-dotnet/blob/master/doc/api/index.html)
+* [Building and Testing](https://github.com/pip-services/pip-services-azure-dotnet/blob/master/doc/Development.md)
+* [Contributing](https://github.com/pip-services/pip-services-azure-dotnet/blob/master/doc/Development.md/#contrib)
 
 ## Acknowledgements
 

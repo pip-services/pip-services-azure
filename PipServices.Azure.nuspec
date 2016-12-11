@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PipServices.Azure</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>PipServices.Azure</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
 
@@ -13,7 +13,7 @@
 
     <description>Azure components for Pip.Services in .NET</description>
     <releaseNotes>Pre release</releaseNotes>
-    <copyright>Digital Living Software Corp. 2016</copyright>
+    <copyright>Conceptual Vision Consulting LLC. 2016</copyright>
     <tags>pip-services microservices framework azure</tags>
 
     <dependencies>
@@ -40,8 +40,8 @@
         <dependency id="Microsoft.ServiceFabric.Data" version="2.3.311"/>
         <dependency id="Microsoft.ServiceFabric.Services" version="2.3.311"/>
         <dependency id="Newtonsoft.Json" version="9.0.1"/>
-        <dependency id="PipServices.Commons" version="1.0.31"/>
-        <dependency id="PipServices.Net" version="1.0.6"/>
+        <dependency id="PipServices.Commons" version="1.0.33"/>
+        <dependency id="PipServices.Net" version="1.0.8"/>
         <dependency id="System.Spatial" version="5.6.4"/>
         <dependency id="WindowsAzure.ServiceBus" version="3.4.3"/>
         <dependency id="WindowsAzure.Storage" version="7.2.1"/>

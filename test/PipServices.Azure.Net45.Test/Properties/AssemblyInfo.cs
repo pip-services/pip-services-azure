@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PipServices.Azure.Net45.Test")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Unit Tests for Pip.Services Azure Components")]
+[assembly: AssemblyDescription("Performs unit testing for Pip.Services Azure components")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PipServices.Azure.Net45.Test")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("Conceptual Vision Consulting LLC.")]
+[assembly: AssemblyProduct("Pip.Services")]
+[assembly: AssemblyCopyright("Copyright © Conceptual Vision Consulting LLC. 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -23,12 +23,12 @@ namespace PipServices.Azure.Config
             if (config != null) Configure(config);
         }
 
-        public Descriptor GetDescriptor()
+        public virtual Descriptor GetDescriptor()
         {
             return new Descriptor("pip-services-azure", "config-reader", "keyvault", Name ?? "default", "1.0");
         }
 
-        public void SetReferences(IReferences references)
+        public virtual void SetReferences(IReferences references)
         {
             _connectionResolver.SetReferences(references);
             _credentialResolver.SetReferences(references);
