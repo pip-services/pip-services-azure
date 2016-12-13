@@ -4,6 +4,7 @@ using PipServices.Commons.Auth;
 using PipServices.Commons.Config;
 using PipServices.Commons.Connect;
 using PipServices.Commons.Convert;
+using PipServices.Commons.Errors;
 using PipServices.Net.Messaging;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,12 @@ namespace PipServices.Azure.Messaging
             Interval = config.GetAsLongWithDefault("interval", Interval);
         }
 
+        private void CheckOpened(string correlationId)
+        {
+            if (_queue == null)
+                throw new InvalidStateException(correlationId, "NOT_OPENED", "The queue is not opened");
+        }
+
         public async override Task OpenAsync(string correlationId, ConnectionParams connection, CredentialParams credential)
         {
             var connectionString = ConfigParams.FromTuples(
@@ -85,6 +92,7 @@ namespace PipServices.Azure.Messaging
         {
             get
             {
+                CheckOpened(null);
                 _queue.FetchAttributes();
                 return _queue.ApproximateMessageCount;
             }
@@ -125,6 +133,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task SendAsync(string correlationId, MessageEnvelop message)
         {
+            CheckOpened(correlationId);
             var content = JsonConverter.ToJson(message);
 
             var envelop = new CloudQueueMessage(content);
@@ -136,6 +145,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task<MessageEnvelop> PeekAsync(string correlationId)
         {
+            CheckOpened(correlationId);
             var envelop = await _queue.PeekMessageAsync(_cancel.Token);
 
             if (envelop == null) return null;
@@ -152,6 +162,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task<List<MessageEnvelop>> PeekBatchAsync(string correlationId, int messageCount)
         {
+            CheckOpened(correlationId);
             var envelops = await _queue.PeekMessagesAsync(messageCount, _cancel.Token);
             var messages = new List<MessageEnvelop>();
 
@@ -169,6 +180,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task<MessageEnvelop> ReceiveAsync(string correlationId, long waitTimeout)
         {
+            CheckOpened(correlationId);
             CloudQueueMessage envelop = null;
 
             do
@@ -198,6 +210,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task RenewLockAsync(MessageEnvelop message, long lockTimeout)
         {
+            CheckOpened(message.CorrelationId);
             // Extend the message visibility
             var envelop = (CloudQueueMessage)message.Reference;
             if (envelop != null)
@@ -209,6 +222,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task AbandonAsync(MessageEnvelop message)
         {
+            CheckOpened(message.CorrelationId);
             // Make the message immediately visible
             var envelop = (CloudQueueMessage)message.Reference;
             if (envelop != null)
@@ -221,6 +235,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task CompleteAsync(MessageEnvelop message)
         {
+            CheckOpened(message.CorrelationId);
             var envelop = (CloudQueueMessage)message.Reference;
             if (envelop != null)
             {
@@ -232,6 +247,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task MoveToDeadLetterAsync(MessageEnvelop message)
         {
+            CheckOpened(message.CorrelationId);
             var envelop = (CloudQueueMessage)message.Reference;
             if (envelop != null)
             {
@@ -260,6 +276,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task ListenAsync(string correlationId, Func<MessageEnvelop, IMessageQueue, Task> callback)
         {
+            CheckOpened(correlationId);
             _logger.Debug(correlationId, "Started listening messages at {0}", this);
 
             // Create new cancelation token
@@ -301,6 +318,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task ClearAsync(string correlationId)
         {
+            CheckOpened(correlationId);
             await _queue.ClearAsync(_cancel.Token);
 
             _logger.Trace(null, "Cleared queue {0}", this);

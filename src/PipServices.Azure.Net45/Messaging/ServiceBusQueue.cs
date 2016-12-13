@@ -3,6 +3,7 @@ using Microsoft.ServiceBus.Messaging;
 using PipServices.Commons.Auth;
 using PipServices.Commons.Config;
 using PipServices.Commons.Connect;
+using PipServices.Commons.Errors;
 using PipServices.Net.Messaging;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,12 @@ namespace PipServices.Azure.Messaging
             _client = client;
         }
 
+        private void CheckOpened(string correlationId)
+        {
+            if (_client == null || _manager == null)
+                throw new InvalidStateException(correlationId, "NOT_OPENED", "The queue is not opened");
+        }
+
         public async override Task OpenAsync(string correlationId, ConnectionParams connection, CredentialParams credential)
         {
             _queueName = connection.GetAsNullableString("queue") ?? Name;
@@ -65,6 +72,7 @@ namespace PipServices.Azure.Messaging
         {
             get
             {
+                CheckOpened(null);
                 var queueDescription = _manager.GetQueue(_queueName);
                 return queueDescription.MessageCount;
             }
@@ -102,6 +110,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task SendAsync(string correlationId, MessageEnvelop message)
         {
+            CheckOpened(correlationId);
             var envelop = new BrokeredMessage(message.Message);
             envelop.ContentType = message.MessageType;
             envelop.CorrelationId = message.CorrelationId;
@@ -115,6 +124,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task<MessageEnvelop> PeekAsync(string correlationId)
         {
+            CheckOpened(correlationId);
             var envelop = await _client.PeekAsync();
             var message = ToMessage(envelop, false);
 
@@ -128,6 +138,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task<List<MessageEnvelop>> PeekBatchAsync(string correlationId, int messageCount)
         {
+            CheckOpened(correlationId);
             var envelops = await _client.PeekBatchAsync(messageCount);
             var messages = new List<MessageEnvelop>();
 
@@ -145,6 +156,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task<MessageEnvelop> ReceiveAsync(string correlationId, long waitTimeout)
         {
+            CheckOpened(correlationId);
             var envelop = await _client.ReceiveAsync(TimeSpan.FromMilliseconds(waitTimeout));
             var message = ToMessage(envelop);
 
@@ -159,6 +171,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task RenewLockAsync(MessageEnvelop message, long lockTimeout)
         {
+            CheckOpened(message.CorrelationId);
             if (message.Reference != null)
             {
                 var reference = (Guid)message.Reference;
@@ -169,6 +182,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task AbandonAsync(MessageEnvelop message)
         {
+            CheckOpened(message.CorrelationId);
             if (message.Reference != null)
             {
                 var reference = (Guid)message.Reference;
@@ -180,6 +194,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task CompleteAsync(MessageEnvelop message)
         {
+            CheckOpened(message.CorrelationId);
             if (message.Reference != null)
             {
                 var reference = (Guid)message.Reference;
@@ -191,6 +206,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task MoveToDeadLetterAsync(MessageEnvelop message)
         {
+            CheckOpened(message.CorrelationId);
             if (message.Reference != null)
             {
                 var reference = (Guid)message.Reference;
@@ -203,6 +219,7 @@ namespace PipServices.Azure.Messaging
 
         public override async Task ListenAsync(string correlationId, Func<MessageEnvelop, IMessageQueue, Task> callback)
         {
+            CheckOpened(correlationId);
             _logger.Trace(correlationId, "Started listening messages at {0}", this);
 
             _client.OnMessageAsync(async envelop =>
@@ -231,6 +248,8 @@ namespace PipServices.Azure.Messaging
 
         public override void EndListen(string correlationId)
         {
+            CheckOpened(correlationId);
+
             // Close old client
             try
             {
@@ -248,6 +267,8 @@ namespace PipServices.Azure.Messaging
 
         public override async Task ClearAsync(string correlationId)
         {
+            CheckOpened(correlationId);
+
             while (true)
             {
                 var envelop = await _client.ReceiveAsync(TimeSpan.FromMilliseconds(0));
