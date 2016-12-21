@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Title="Welcome to the PipServices.Azure" Url="html/2c590b49-022b-4271-81bf-e811e45e45f3.htm" />
+  <HelpTOCNode Id="c0208ce6-074e-494a-ae1b-75a9174b20a7" Title="Version History" Url="html/a91d3f05-4065-4833-a966-e067b1815ca6.htm">
+    <HelpTOCNode Title="Version 1.0.9" Url="html/9a0c8e3f-c6ff-4766-aa4e-dc6181bd3e39.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="83b00fb3-9115-4974-b1f5-747b36980909" Title="PipServices.Azure.Auth" Url="html/N_PipServices_Azure_Auth.htm">
+    <HelpTOCNode Id="35f5af3b-7634-4be9-a60a-b192ca8f4c47" Title="KeyVaultClient Class" Url="html/T_PipServices_Azure_Auth_KeyVaultClient.htm">
+      <HelpTOCNode Title="KeyVaultClient Constructor " Url="html/M_PipServices_Azure_Auth_KeyVaultClient__ctor.htm" />
+      <HelpTOCNode Id="108a12eb-e6e8-463f-bcbd-196691eddaf7" Title="KeyVaultClient Methods" Url="html/Methods_T_PipServices_Azure_Auth_KeyVaultClient.htm">
+        <HelpTOCNode Title="FindCertificateByThumbprint Method " Url="html/M_PipServices_Azure_Auth_KeyVaultClient_FindCertificateByThumbprint.htm" />
+        <HelpTOCNode Title="GetAccessToken Method " Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetAccessToken.htm" />
+        <HelpTOCNode Title="GetSecretNamesAsync Method " Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretNamesAsync.htm" />
+        <HelpTOCNode Title="GetSecretsAsync Method " Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretsAsync.htm" />
+        <HelpTOCNode Title="GetSecretValueAsync Method " Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretValueAsync.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="5ea18f70-798e-4ad7-aa49-7a4343cec821" Title="PipServices.Azure.Config" Url="html/N_PipServices_Azure_Config.htm">
+    <HelpTOCNode Id="d52387b3-571b-4f5a-a483-87c1df06253b" Title="KeyVaultConfigReader Class" Url="html/T_PipServices_Azure_Config_KeyVaultConfigReader.htm">
+      <HelpTOCNode Id="f3ac2b4f-78a0-4e15-b0a3-53f176862c33" Title="KeyVaultConfigReader Constructor " Url="html/Overload_PipServices_Azure_Config_KeyVaultConfigReader__ctor.htm">
+        <HelpTOCNode Title="KeyVaultConfigReader Constructor " Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader__ctor.htm" />
+        <HelpTOCNode Title="KeyVaultConfigReader Constructor (String, ConfigParams)" Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader__ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="KeyVaultConfigReader Properties" Url="html/Properties_T_PipServices_Azure_Config_KeyVaultConfigReader.htm" />
+      <HelpTOCNode Id="25326e54-7277-4dfb-bcc6-faea221b721c" Title="KeyVaultConfigReader Methods" Url="html/Methods_T_PipServices_Azure_Config_KeyVaultConfigReader.htm">
+        <HelpTOCNode Title="Configure Method " Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_Configure.htm" />
+        <HelpTOCNode Title="GetDescriptor Method " Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_GetDescriptor.htm" />
+        <HelpTOCNode Title="PerformReadConfig Method " Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_PerformReadConfig.htm" />
+        <HelpTOCNode Id="bbb48639-39ce-4d39-a69a-b12eb1639cfb" Title="ReadConfig Method " Url="html/Overload_PipServices_Azure_Config_KeyVaultConfigReader_ReadConfig.htm">
+          <HelpTOCNode Title="ReadConfig Method (String, ConfigParams)" Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_ReadConfig.htm" />
+          <HelpTOCNode Title="ReadConfig Method (String, String)" Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_ReadConfig_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="SetReferences Method " Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_SetReferences.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="0db837be-522a-413d-8a17-c5e0f96cc75c" Title="PipServices.Azure.Count" Url="html/N_PipServices_Azure_Count.htm">
+    <HelpTOCNode Id="e83425f3-29d4-4989-a71b-74be08823b20" Title="AppInsightsCounters Class" Url="html/T_PipServices_Azure_Count_AppInsightsCounters.htm">
+      <HelpTOCNode Title="AppInsightsCounters Constructor " Url="html/M_PipServices_Azure_Count_AppInsightsCounters__ctor.htm" />
+      <HelpTOCNode Id="b9dfadc1-707e-4f3e-9114-043a0b6f05e5" Title="AppInsightsCounters Properties" Url="html/Properties_T_PipServices_Azure_Count_AppInsightsCounters.htm">
+        <HelpTOCNode Title="Name Property " Url="html/P_PipServices_Azure_Count_AppInsightsCounters_Name.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3308e39f-4d00-444c-9312-c376a53fa05f" Title="AppInsightsCounters Methods" Url="html/Methods_T_PipServices_Azure_Count_AppInsightsCounters.htm">
+        <HelpTOCNode Title="Configure Method " Url="html/M_PipServices_Azure_Count_AppInsightsCounters_Configure.htm" />
+        <HelpTOCNode Title="GetDescriptor Method " Url="html/M_PipServices_Azure_Count_AppInsightsCounters_GetDescriptor.htm" />
+        <HelpTOCNode Title="Save Method " Url="html/M_PipServices_Azure_Count_AppInsightsCounters_Save.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="ec198507-2988-421f-b6fc-5ab217dc0d5f" Title="PipServices.Azure.Messaging" Url="html/N_PipServices_Azure_Messaging.htm">
+    <HelpTOCNode Id="461caa3f-51e2-4f74-97a7-ca1749de056c" Title="ServiceBusMessageQueue Class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm">
+      <HelpTOCNode Id="02262957-21d3-4412-b791-259421de9fc7" Title="ServiceBusMessageQueue Constructor " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue__ctor.htm">
+        <HelpTOCNode Title="ServiceBusMessageQueue Constructor (String)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue__ctor.htm" />
+        <HelpTOCNode Title="ServiceBusMessageQueue Constructor (String, QueueClient)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue__ctor_1.htm" />
+        <HelpTOCNode Title="ServiceBusMessageQueue Constructor (String, ConfigParams)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue__ctor_2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ba3d3c21-0091-4c29-bb9e-8eadb1d84e9c" Title="ServiceBusMessageQueue Properties" Url="html/Properties_T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm">
+        <HelpTOCNode Title="MessageCount Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageQueue_MessageCount.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b5c459a9-c794-4a0e-987a-1981aa4a394f" Title="ServiceBusMessageQueue Methods" Url="html/Methods_T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm">
+        <HelpTOCNode Title="AbandonAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_AbandonAsync.htm" />
+        <HelpTOCNode Title="ClearAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_ClearAsync.htm" />
+        <HelpTOCNode Title="CloseAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_CloseAsync.htm" />
+        <HelpTOCNode Title="CompleteAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_CompleteAsync.htm" />
+        <HelpTOCNode Title="EndListen Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_EndListen.htm" />
+        <HelpTOCNode Id="39dec45d-8764-4a89-a685-ef4ea74d44a3" Title="ListenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_ListenAsync.htm">
+          <HelpTOCNode Title="ListenAsync Method (String, Func(MessageEnvelop, IMessageQueue, Task))" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_ListenAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MoveToDeadLetterAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_MoveToDeadLetterAsync.htm" />
+        <HelpTOCNode Id="e9018a6a-b0cf-4f06-be1f-a73781ee4564" Title="OpenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_OpenAsync.htm">
+          <HelpTOCNode Title="OpenAsync Method (String, ConnectionParams, CredentialParams)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_OpenAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="PeekAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_PeekAsync.htm" />
+        <HelpTOCNode Title="PeekBatchAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_PeekBatchAsync.htm" />
+        <HelpTOCNode Title="ReceiveAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_ReceiveAsync.htm" />
+        <HelpTOCNode Title="RenewLockAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_RenewLockAsync.htm" />
+        <HelpTOCNode Id="d511c68d-b815-446d-9818-a81b19dfe249" Title="SendAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_SendAsync.htm">
+          <HelpTOCNode Title="SendAsync Method (String, MessageEnvelop)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_SendAsync.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="ServiceBusMessageQueue Fields" Url="html/Fields_T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="9dbb5979-2264-41ae-9125-74b65aa1635f" Title="ServiceBusMessageTopic Class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm">
+      <HelpTOCNode Id="b4fc366c-4694-4044-a478-8fc7b1171a73" Title="ServiceBusMessageTopic Constructor " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic__ctor.htm">
+        <HelpTOCNode Title="ServiceBusMessageTopic Constructor (String)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic__ctor.htm" />
+        <HelpTOCNode Title="ServiceBusMessageTopic Constructor (String, ConfigParams)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic__ctor_2.htm" />
+        <HelpTOCNode Title="ServiceBusMessageTopic Constructor (String, TopicClient, SubscriptionClient)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic__ctor_1.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0c805833-1aec-4b90-af6f-d908a32def75" Title="ServiceBusMessageTopic Properties" Url="html/Properties_T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm">
+        <HelpTOCNode Title="MessageCount Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic_MessageCount.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="20f41575-9dad-486a-90e6-319cd42c4bd4" Title="ServiceBusMessageTopic Methods" Url="html/Methods_T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm">
+        <HelpTOCNode Title="AbandonAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_AbandonAsync.htm" />
+        <HelpTOCNode Title="ClearAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_ClearAsync.htm" />
+        <HelpTOCNode Title="CloseAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_CloseAsync.htm" />
+        <HelpTOCNode Title="CompleteAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_CompleteAsync.htm" />
+        <HelpTOCNode Title="EndListen Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_EndListen.htm" />
+        <HelpTOCNode Id="20ce1edc-a36a-449d-9c50-517f039f24c2" Title="ListenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_ListenAsync.htm">
+          <HelpTOCNode Title="ListenAsync Method (String, Func(MessageEnvelop, IMessageQueue, Task))" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_ListenAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MoveToDeadLetterAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_MoveToDeadLetterAsync.htm" />
+        <HelpTOCNode Id="724a9231-f9d4-40dd-881a-93b3b87738d9" Title="OpenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_OpenAsync.htm">
+          <HelpTOCNode Title="OpenAsync Method (String, ConnectionParams, CredentialParams)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_OpenAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="PeekAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_PeekAsync.htm" />
+        <HelpTOCNode Title="PeekBatchAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_PeekBatchAsync.htm" />
+        <HelpTOCNode Title="ReceiveAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_ReceiveAsync.htm" />
+        <HelpTOCNode Title="RenewLockAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_RenewLockAsync.htm" />
+        <HelpTOCNode Id="d7805f87-3563-40f4-8129-e86d029da7b8" Title="SendAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_SendAsync.htm">
+          <HelpTOCNode Title="SendAsync Method (String, MessageEnvelop)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_SendAsync.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="ServiceBusMessageTopic Fields" Url="html/Fields_T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="3cddc00a-7d5a-465e-8cb0-8fc28a52fda1" Title="ServiceBusMessageTopic2 Class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm">
+      <HelpTOCNode Id="aa0b8cc3-47fc-4469-990d-f5e338c8a232" Title="ServiceBusMessageTopic2 Constructor " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2__ctor.htm">
+        <HelpTOCNode Title="ServiceBusMessageTopic2 Constructor (String)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2__ctor.htm" />
+        <HelpTOCNode Title="ServiceBusMessageTopic2 Constructor (String, TopicClient)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2__ctor_1.htm" />
+        <HelpTOCNode Title="ServiceBusMessageTopic2 Constructor (String, ConfigParams)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2__ctor_2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="61df9c33-57b5-49b4-99f9-c54e90002646" Title="ServiceBusMessageTopic2 Properties" Url="html/Properties_T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm">
+        <HelpTOCNode Title="Interval Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Interval.htm" />
+        <HelpTOCNode Title="MessageCount Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_MessageCount.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="cd6a89c3-b6ad-478b-95ea-652f9042c72a" Title="ServiceBusMessageTopic2 Methods" Url="html/Methods_T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm">
+        <HelpTOCNode Title="AbandonAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_AbandonAsync.htm" />
+        <HelpTOCNode Title="ClearAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ClearAsync.htm" />
+        <HelpTOCNode Title="CloseAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_CloseAsync.htm" />
+        <HelpTOCNode Title="CompleteAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_CompleteAsync.htm" />
+        <HelpTOCNode Title="Configure Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Configure.htm" />
+        <HelpTOCNode Title="EndListen Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_EndListen.htm" />
+        <HelpTOCNode Id="0550a2b2-f031-4bcd-bba1-54e37201ebcb" Title="ListenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ListenAsync.htm">
+          <HelpTOCNode Title="ListenAsync Method (String, Func(MessageEnvelop, IMessageQueue, Task))" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ListenAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MoveToDeadLetterAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_MoveToDeadLetterAsync.htm" />
+        <HelpTOCNode Id="f74cedf6-12f5-429a-ba6a-2fb27f8a62b8" Title="OpenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_OpenAsync.htm">
+          <HelpTOCNode Title="OpenAsync Method (String, ConnectionParams, CredentialParams)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_OpenAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="PeekAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_PeekAsync.htm" />
+        <HelpTOCNode Title="PeekBatchAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_PeekBatchAsync.htm" />
+        <HelpTOCNode Title="ReceiveAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ReceiveAsync.htm" />
+        <HelpTOCNode Title="RenewLockAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_RenewLockAsync.htm" />
+        <HelpTOCNode Id="2cf36c4b-ba51-49c3-a59a-3d380d31238c" Title="SendAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_SendAsync.htm">
+          <HelpTOCNode Title="SendAsync Method (String, MessageEnvelop)" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_SendAsync.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="ServiceBusMessageTopic2 Fields" Url="html/Fields_T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6b05b8bc-7824-4a69-bd98-d2ddd9a01767" Title="StorageMessageQueue Class" Url="html/T_PipServices_Azure_Messaging_StorageMessageQueue.htm">
+      <HelpTOCNode Id="6d2f1c8d-c4e5-4634-aa1b-05f71271695c" Title="StorageMessageQueue Constructor " Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue__ctor.htm">
+        <HelpTOCNode Title="StorageMessageQueue Constructor (String)" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue__ctor.htm" />
+        <HelpTOCNode Title="StorageMessageQueue Constructor (String, CloudQueue)" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue__ctor_1.htm" />
+        <HelpTOCNode Title="StorageMessageQueue Constructor (String, ConfigParams)" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue__ctor_2.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c04f4f26-ca49-4ea9-862c-f5728008b7b4" Title="StorageMessageQueue Properties" Url="html/Properties_T_PipServices_Azure_Messaging_StorageMessageQueue.htm">
+        <HelpTOCNode Title="Interval Property " Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_Interval.htm" />
+        <HelpTOCNode Title="MessageCount Property " Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_MessageCount.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="28641b3a-4e8b-4be3-bdcd-06a91120381e" Title="StorageMessageQueue Methods" Url="html/Methods_T_PipServices_Azure_Messaging_StorageMessageQueue.htm">
+        <HelpTOCNode Title="AbandonAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_AbandonAsync.htm" />
+        <HelpTOCNode Title="ClearAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_ClearAsync.htm" />
+        <HelpTOCNode Title="CloseAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_CloseAsync.htm" />
+        <HelpTOCNode Title="CompleteAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_CompleteAsync.htm" />
+        <HelpTOCNode Title="Configure Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_Configure.htm" />
+        <HelpTOCNode Title="EndListen Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_EndListen.htm" />
+        <HelpTOCNode Id="69953c94-cda7-42d0-b35a-14baad3af864" Title="ListenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_ListenAsync.htm">
+          <HelpTOCNode Title="ListenAsync Method (String, Func(MessageEnvelop, IMessageQueue, Task))" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_ListenAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="MoveToDeadLetterAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_MoveToDeadLetterAsync.htm" />
+        <HelpTOCNode Id="ae7a0c86-23fd-4577-a22b-eeedb91c0c26" Title="OpenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_OpenAsync.htm">
+          <HelpTOCNode Title="OpenAsync Method (String, ConnectionParams, CredentialParams)" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_OpenAsync.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="PeekAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_PeekAsync.htm" />
+        <HelpTOCNode Title="PeekBatchAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_PeekBatchAsync.htm" />
+        <HelpTOCNode Title="ReceiveAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_ReceiveAsync.htm" />
+        <HelpTOCNode Title="RenewLockAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_RenewLockAsync.htm" />
+        <HelpTOCNode Id="68756f5c-82b6-49e8-b045-1061805223b9" Title="SendAsync Method " Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_SendAsync.htm">
+          <HelpTOCNode Title="SendAsync Method (String, MessageEnvelop)" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_SendAsync.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="StorageMessageQueue Fields" Url="html/Fields_T_PipServices_Azure_Messaging_StorageMessageQueue.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>
