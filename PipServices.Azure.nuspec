@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PipServices.Azure</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>PipServices.Azure</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
 
@@ -18,7 +18,8 @@
 
     <dependencies>
       <group targetFramework="net">
-        <dependency id="PipServices.Commons" version="1.0.33"/>
+        <dependency id="PipServices.Commons" version="1.0.36"/>
+        <dependency id="PipServices.Container" version="1.0.9"/>
         <dependency id="PipServices.Net" version="1.0.9"/>
       </group>
     </dependencies>
