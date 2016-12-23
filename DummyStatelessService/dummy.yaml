@@ -2,3 +2,5 @@
   level: "trace"
 
 - descriptor: "pip-services-dummies:controller:azure:*:*"
+
+- descriptor: "pip-services-dummies:service:azure:stateless:*"

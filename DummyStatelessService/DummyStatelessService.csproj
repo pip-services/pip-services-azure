@@ -61,11 +61,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PipServices.Commons, Version=1.0.29.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PipServices.Commons.1.0.36\lib\net45\PipServices.Commons.dll</HintPath>
+      <HintPath>..\packages\PipServices.Commons.1.0.37\lib\net45\PipServices.Commons.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PipServices.Container">
-      <HintPath>..\packages\PipServices.Container.1.0.9\lib\net45\PipServices.Container.dll</HintPath>
+    <Reference Include="PipServices.Container, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PipServices.Container.1.0.10\lib\net45\PipServices.Container.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ServiceFabricServiceModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64">
       <HintPath>..\packages\Microsoft.ServiceFabric.Services.2.4.145\lib\net45\ServiceFabricServiceModel.dll</HintPath>
@@ -88,7 +89,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Build\DummyServiceContainer.cs" />
     <Compile Include="Build\DummyStatelessServiceFactory.cs" />
     <Compile Include="IDummyMicroservice.cs" />
     <Compile Include="Logic\IDummyController.cs" />

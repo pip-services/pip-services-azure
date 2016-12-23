@@ -2,11 +2,11 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.ServiceFabric.Services.Runtime;
+using PipServices.Commons.Build;
 using PipServices.Commons.Errors;
 using PipServices.Commons.Log;
 using PipServices.Commons.Refer;
 using PipServices.Commons.Run;
-using PipServices.Container.Config;
 using PipServices.Container.Info;
 using PipServices.Container.Refer;
 
@@ -15,9 +15,18 @@ namespace PipServices.Azure.Run
     /// <summary>
     /// Class MicroserviceProcessContainer.
     /// </summary>
-    public abstract class MicroserviceProcessContainer : Container.Container
+    public class MicroserviceProcessContainer : Container.Container
     {
         private string _correlationId;
+        private IFactory _factory;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MicroserviceProcessContainer"/> class.
+        /// </summary>
+        public MicroserviceProcessContainer()
+        {
+            References = new ContainerReferences();
+        }
 
         private void CaptureErrors()
         {
@@ -29,49 +38,14 @@ namespace PipServices.Azure.Run
             Logger.Fatal(_correlationId, (Exception)args.ExceptionObject, "Process is terminated");
         }
 
-        private void CaptureExit(string correlationId)
-        {
-            //Logger.Info(null, "Press Control-C to stop the microservice...");
-
-            //AppDomain.CurrentDomain.DomainUnload += (sender, args) => InvokeBatchProcessors(correlationId, Logger, _exitEvent);
-
-            //// Wait and close
-            //try
-            //{
-            //    _exitEvent.Wait();
-            //}
-            //catch (OperationCanceledException)
-            //{
-            //    // Ignore...
-            //}
-            //catch (ObjectDisposedException)
-            //{
-            //    // Ignore...
-            //}
-        }
-
-        private void InvokeBatchProcessors(string correlationId, ILogger logger, SemaphoreSlim exitEvent)
-        {
-            logger.Info(correlationId, "Goodbye!");
-        }
-
-        private async Task RunAsync(string correlationId, IDescriptable service, CancellationToken token)
+        private async Task RunAsync(string correlationId, CancellationToken token)
         {
             _correlationId = correlationId;
 
             CaptureErrors();
 
-            await StartAsync(correlationId, service, token);
-        }
+            //await StartAsync(correlationId, token);
 
-        public Task RunWithConfigFileAsync(string correlationId, IDescriptable service, string path, CancellationToken token)
-        {
-            ReadConfigFromFile(correlationId, path);
-            return RunAsync(correlationId, service, token);
-        }
-
-        private async Task StartAsync(string correlationId, IDescriptable service, CancellationToken token)
-        {
             if (Config == null)
                 throw new InvalidStateException(correlationId, "NO_CONFIG", "Container was not configured");
 
@@ -80,11 +54,8 @@ namespace PipServices.Azure.Run
                 Logger.Trace(correlationId, "Starting container.");
 
                 // Create references with configured components
-                References = new ContainerReferences();
                 InitReferences(References);
                 References.PutFromConfig(Config);
-
-                References.Put(service, service.GetDescriptor());
 
                 // Reference and open components
                 var components = References.GetAll();
@@ -107,6 +78,39 @@ namespace PipServices.Azure.Run
 
                 throw;
             }
+        }
+
+        /// <summary>
+        /// stop as an asynchronous operation.
+        /// </summary>
+        /// <param name="token">The token.</param>
+        /// <returns>Task.</returns>
+        public async Task StopAsync(CancellationToken token)
+        {
+            await StopAsync(_correlationId, token);
+        }
+
+
+        /// <summary>
+        /// Runs the with configuration file asynchronous.
+        /// </summary>
+        /// <param name="correlationId">The correlation identifier.</param>
+        /// <param name="path">The path.</param>
+        /// <param name="token">The token.</param>
+        /// <returns>Task.</returns>
+        public Task RunWithConfigFileAsync(string correlationId, string path, CancellationToken token)
+        {
+            ReadConfigFromFile(correlationId, path);
+            return RunAsync(correlationId, token);
+        }
+
+        /// <summary>
+        /// Gets stateless service.
+        /// </summary>
+        /// <returns>StatelessService.</returns>
+        public StatelessService GetService()
+        {
+            return References.GetOneRequired<StatelessService>(new Descriptor("*", "service", "azure", "*", "*"));
         }
     }
 }

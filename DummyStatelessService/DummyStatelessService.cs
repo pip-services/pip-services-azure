@@ -22,7 +22,7 @@ namespace DummyStatelessService
         /// Gets the descriptor.
         /// </summary>
         /// <value>The descriptor.</value>
-        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "service", "azure", "default", "1.0");
+        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "service", "azure", "stateless", "1.0");
 
         public DummyStatelessService(StatelessServiceContext context)
             : base(context)

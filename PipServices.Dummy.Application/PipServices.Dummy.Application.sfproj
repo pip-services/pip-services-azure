@@ -22,8 +22,10 @@
     <None Include="PublishProfiles\Cloud.xml" />
     <None Include="PublishProfiles\Local.xml" />
     <None Include="Scripts\Deploy-FabricApplication.ps1" />
+    <None Include="Scripts\update-cluster-dummy.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Deploy.cmd" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

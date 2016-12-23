@@ -3,23 +3,21 @@ using System.Diagnostics;
 using System.Threading;
 using DummyStatelessService.Build;
 using Microsoft.ServiceFabric.Services.Runtime;
+using PipServices.Azure.Run;
 
 namespace DummyStatelessService
 {
     internal static class Program
     {
-        private static DummyStatelessService _service;
-        private static DummyServiceContainer _processContainer;
-
         /// <summary>
         /// This is the entry point of the service host process.
         /// </summary>
         private static void Main()
         {
+            MicroserviceProcessContainer processContainer = null;
+
             try
             {
-                _processContainer = new DummyServiceContainer();
-
                 // The ServiceManifest.XML file defines one or more service type names.
                 // Registering a service maps a service type name to a .NET type.
                 // When Service Fabric creates an instance of this service type,
@@ -28,11 +26,18 @@ namespace DummyStatelessService
                 ServiceRuntime.RegisterServiceAsync("DummyStatelessServiceType",
                     context =>
                     {
-                        _service = new DummyStatelessService(context);
+                        processContainer = new MicroserviceProcessContainer();
 
-                        _processContainer.RunAsync(_service, CancellationToken.None).Wait();
+                        var refer = processContainer.References;
+                        
+                        refer.Put(context, DummyStatelessServiceFactory.ContextDescriptor);
+                        refer.Put(new DummyStatelessServiceFactory(refer));
 
-                        return _service;
+                        processContainer.RunWithConfigFileAsync("dummy", "dummy.yaml", CancellationToken.None).Wait();
+
+                        var service = processContainer.GetService();
+
+                        return service;
                     }
                     ).GetAwaiter().GetResult();
 
@@ -43,7 +48,7 @@ namespace DummyStatelessService
             }
             catch (Exception e)
             {
-                _processContainer.StopAsync(CancellationToken.None).Wait();
+                processContainer?.StopAsync(CancellationToken.None).Wait();
 
                 ServiceEventSource.Current.ServiceHostInitializationFailed(e.ToString());
 
