@@ -69,7 +69,7 @@ namespace PipServices.Azure.Log
 
             var key = credential.AccessKey
                 ?? credential.GetAsNullableString("instrumentation_key")
-                 ?? credential.GetAsNullableString("InstrumentationKey");
+                ?? credential.GetAsNullableString("InstrumentationKey");
 
             if (key != null)
                 TelemetryConfiguration.Active.InstrumentationKey = key;

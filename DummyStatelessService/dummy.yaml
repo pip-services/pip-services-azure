@@ -1,0 +1,4 @@
+﻿- descriptor: "pip-services-commons:logger:console:*:*"
+  level: "trace"
+
+- descriptor: "pip-services-dummies:controller:azure:*:*"
