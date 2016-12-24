@@ -59,8 +59,8 @@ namespace PipServices.Azure.Run
 
                 // Reference and open components
                 var components = References.GetAll();
-                Referencer.SetReferencesForComponents(References, components);
-                await Opener.OpenComponentsAsync(correlationId, References.GetAll());
+                Referencer.SetReferences(References, components);
+                await Opener.OpenAsync(correlationId, References.GetAll());
 
                 // Get reference to logger
                 Logger = new CompositeLogger(References);
