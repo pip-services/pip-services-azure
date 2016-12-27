@@ -31,11 +31,11 @@ namespace DummyStatelessService
                         var refer = processContainer.References;
                         
                         refer.Put(context, DummyStatelessServiceFactory.ContextDescriptor);
-                        refer.Put(new DummyStatelessServiceFactory(refer));
+                        //refer.Put(new DummyStatelessServiceFactory(refer)); //???
 
                         processContainer.RunWithConfigFileAsync("dummy", "dummy.yaml", CancellationToken.None).Wait();
 
-                        var service = processContainer.GetService();
+                        var service = processContainer.GetService<DummyStatelessService>();
 
                         return service;
                     }

@@ -59,8 +59,8 @@ namespace PipServices.Azure.Run
 
                 // Reference and open components
                 var components = References.GetAll();
-                Referencer.SetReferencesForComponents(References, components);
-                await Opener.OpenComponentsAsync(correlationId, References.GetAll());
+                Referencer.SetReferences(References, components);
+                await Opener.OpenAsync(correlationId, References.GetAll());
 
                 // Get reference to logger
                 Logger = new CompositeLogger(References);
@@ -108,9 +108,13 @@ namespace PipServices.Azure.Run
         /// Gets stateless service.
         /// </summary>
         /// <returns>StatelessService.</returns>
-        public StatelessService GetService()
+        public T GetService<T>()
+            where T: class
         {
-            return References.GetOneRequired<StatelessService>(new Descriptor("*", "service", "azure", "*", "*"));
+            if (typeof(T) != typeof(StatelessService) && typeof(T) != typeof(StatefulService))
+                throw new ArgumentException("Service should be derived from either StatelessService or StatefulService", nameof(T));
+
+            return References.GetOneRequired<T>(new Descriptor("*", "service", "azure", "*", "*"));
         }
     }
 }

@@ -11,21 +11,13 @@ namespace DummyStatelessService.Build
     /// </summary>
     /// <seealso cref="PipServices.Commons.Build.IFactory" />
     /// <seealso cref="PipServices.Commons.Refer.IDescriptable" />
-    internal sealed class DummyStatelessServiceFactory : IFactory, IDescriptable
+    internal sealed class DummyStatelessServiceFactory : IFactory, IDescriptable, IReferenceable
     {
         private IReferences _references;
 
         public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "factory", "azure", "default", "1.0");
 
         public static Descriptor ContextDescriptor { get; } = new Descriptor("pip-services-dummies", "context", "azure", "stateless", "1.0");
-
-        public DummyStatelessServiceFactory(IReferences references)
-        {
-            if (references == null)
-                throw new ArgumentNullException(nameof(references));
-
-            _references = references;
-        }
 
         /// <summary>
         /// Determines whether this instance can create the specified locater.
@@ -80,6 +72,11 @@ namespace DummyStatelessService.Build
         public Descriptor GetDescriptor()
         {
             return Descriptor;
+        }
+
+        public void SetReferences(IReferences references)
+        {
+            _references = references;
         }
     }
 }
