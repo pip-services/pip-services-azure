@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="AbandonAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.AbandonAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_AbandonAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.AbandonAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_AbandonAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.AbandonAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_AbandonAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.AbandonAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_AbandonAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppInsightsCounters class">
+    <HelpKINode Title="AppInsightsCounters Class" Url="html/T_PipServices_Azure_Count_AppInsightsCounters.htm" />
+    <HelpKINode Title="about AppInsightsCounters class" Url="html/T_PipServices_Azure_Count_AppInsightsCounters.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PipServices_Azure_Count_AppInsightsCounters__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Count_AppInsightsCounters.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Count_AppInsightsCounters.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppInsightsCounters.AppInsightsCounters constructor" Url="html/M_PipServices_Azure_Count_AppInsightsCounters__ctor.htm" />
+  <HelpKINode Title="AppInsightsCounters.Configure method" Url="html/M_PipServices_Azure_Count_AppInsightsCounters_Configure.htm" />
+  <HelpKINode Title="AppInsightsCounters.GetDescriptor method" Url="html/M_PipServices_Azure_Count_AppInsightsCounters_GetDescriptor.htm" />
+  <HelpKINode Title="AppInsightsCounters.Name property" Url="html/P_PipServices_Azure_Count_AppInsightsCounters_Name.htm" />
+  <HelpKINode Title="AppInsightsCounters.Save method" Url="html/M_PipServices_Azure_Count_AppInsightsCounters_Save.htm" />
+  <HelpKINode Title="AppInsightsLogger class">
+    <HelpKINode Title="AppInsightsLogger Class" Url="html/T_PipServices_Azure_Log_AppInsightsLogger.htm" />
+    <HelpKINode Title="about AppInsightsLogger class" Url="html/T_PipServices_Azure_Log_AppInsightsLogger.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PipServices_Azure_Log_AppInsightsLogger__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Log_AppInsightsLogger.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Log_AppInsightsLogger.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AppInsightsLogger.AppInsightsLogger constructor" Url="html/M_PipServices_Azure_Log_AppInsightsLogger__ctor.htm" />
+  <HelpKINode Title="AppInsightsLogger.Configure method" Url="html/M_PipServices_Azure_Log_AppInsightsLogger_Configure.htm" />
+  <HelpKINode Title="AppInsightsLogger.Dump method" Url="html/M_PipServices_Azure_Log_AppInsightsLogger_Dump.htm" />
+  <HelpKINode Title="AppInsightsLogger.GetDescriptor method" Url="html/M_PipServices_Azure_Log_AppInsightsLogger_GetDescriptor.htm" />
+  <HelpKINode Title="AppInsightsLogger.Name property" Url="html/P_PipServices_Azure_Log_AppInsightsLogger_Name.htm" />
+  <HelpKINode Title="AppInsightsLogger.Write method" Url="html/M_PipServices_Azure_Log_AppInsightsLogger_Write.htm" />
+  <HelpKINode Title="ClearAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.ClearAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_ClearAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.ClearAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_ClearAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.ClearAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ClearAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.ClearAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_ClearAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CloseAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.CloseAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_CloseAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.CloseAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_CloseAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.CloseAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_CloseAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.CloseAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_CloseAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CompleteAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.CompleteAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_CompleteAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.CompleteAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_CompleteAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.CompleteAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_CompleteAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.CompleteAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_CompleteAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Configure method">
+    <HelpKINode Title="AppInsightsCounters.Configure Method " Url="html/M_PipServices_Azure_Count_AppInsightsCounters_Configure.htm" />
+    <HelpKINode Title="AppInsightsLogger.Configure Method " Url="html/M_PipServices_Azure_Log_AppInsightsLogger_Configure.htm" />
+    <HelpKINode Title="KeyVaultConfigReader.Configure Method " Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_Configure.htm" />
+    <HelpKINode Title="MicroserviceStatefulService(TC).Configure Method " Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_Configure.htm" />
+    <HelpKINode Title="MicroserviceStatelessService(TC).Configure Method " Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_Configure.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.Configure Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Configure.htm" />
+    <HelpKINode Title="StorageMessageQueue.Configure Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_Configure.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Controller property">
+    <HelpKINode Title="MicroserviceStatefulService(TC).Controller Property " Url="html/P_PipServices_Azure_Run_MicroserviceStatefulService_1_Controller.htm" />
+    <HelpKINode Title="MicroserviceStatelessService(TC).Controller Property " Url="html/P_PipServices_Azure_Run_MicroserviceStatelessService_1_Controller.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dump method" Url="html/M_PipServices_Azure_Log_AppInsightsLogger_Dump.htm" />
+  <HelpKINode Title="EndListen method">
+    <HelpKINode Title="ServiceBusMessageQueue.EndListen Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_EndListen.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.EndListen Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_EndListen.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.EndListen Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_EndListen.htm" />
+    <HelpKINode Title="StorageMessageQueue.EndListen Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_EndListen.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FindCertificateByThumbprint method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_FindCertificateByThumbprint.htm" />
+  <HelpKINode Title="GetAccessToken method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetAccessToken.htm" />
+  <HelpKINode Title="GetDescriptor method">
+    <HelpKINode Title="AppInsightsCounters.GetDescriptor Method " Url="html/M_PipServices_Azure_Count_AppInsightsCounters_GetDescriptor.htm" />
+    <HelpKINode Title="AppInsightsLogger.GetDescriptor Method " Url="html/M_PipServices_Azure_Log_AppInsightsLogger_GetDescriptor.htm" />
+    <HelpKINode Title="KeyVaultConfigReader.GetDescriptor Method " Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_GetDescriptor.htm" />
+    <HelpKINode Title="MicroserviceStatefulService(TC).GetDescriptor Method " Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_GetDescriptor.htm" />
+    <HelpKINode Title="MicroserviceStatelessService(TC).GetDescriptor Method " Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_GetDescriptor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetSecretNamesAsync method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretNamesAsync.htm" />
+  <HelpKINode Title="GetSecretsAsync method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretsAsync.htm" />
+  <HelpKINode Title="GetSecretValueAsync method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretValueAsync.htm" />
+  <HelpKINode Title="GetService(Of T) method" Url="html/M_PipServices_Azure_Run_MicroserviceProcessContainer_GetService__1.htm" />
+  <HelpKINode Title="GetService&lt;T&gt; method" Url="html/M_PipServices_Azure_Run_MicroserviceProcessContainer_GetService__1.htm" />
+  <HelpKINode Title="Interval property">
+    <HelpKINode Title="ServiceBusMessageTopic2.Interval Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Interval.htm" />
+    <HelpKINode Title="StorageMessageQueue.Interval Property " Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_Interval.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KeyVaultClient class">
+    <HelpKINode Title="KeyVaultClient Class" Url="html/T_PipServices_Azure_Auth_KeyVaultClient.htm" />
+    <HelpKINode Title="about KeyVaultClient class" Url="html/T_PipServices_Azure_Auth_KeyVaultClient.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PipServices_Azure_Auth_KeyVaultClient__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Auth_KeyVaultClient.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KeyVaultClient.FindCertificateByThumbprint method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_FindCertificateByThumbprint.htm" />
+  <HelpKINode Title="KeyVaultClient.GetAccessToken method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetAccessToken.htm" />
+  <HelpKINode Title="KeyVaultClient.GetSecretNamesAsync method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretNamesAsync.htm" />
+  <HelpKINode Title="KeyVaultClient.GetSecretsAsync method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretsAsync.htm" />
+  <HelpKINode Title="KeyVaultClient.GetSecretValueAsync method" Url="html/M_PipServices_Azure_Auth_KeyVaultClient_GetSecretValueAsync.htm" />
+  <HelpKINode Title="KeyVaultClient.KeyVaultClient constructor" Url="html/M_PipServices_Azure_Auth_KeyVaultClient__ctor.htm" />
+  <HelpKINode Title="KeyVaultConfigReader class">
+    <HelpKINode Title="KeyVaultConfigReader Class" Url="html/T_PipServices_Azure_Config_KeyVaultConfigReader.htm" />
+    <HelpKINode Title="about KeyVaultConfigReader class" Url="html/T_PipServices_Azure_Config_KeyVaultConfigReader.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_PipServices_Azure_Config_KeyVaultConfigReader__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Config_KeyVaultConfigReader.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Config_KeyVaultConfigReader.htm" />
+  </HelpKINode>
+  <HelpKINode Title="KeyVaultConfigReader.Configure method" Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_Configure.htm" />
+  <HelpKINode Title="KeyVaultConfigReader.GetDescriptor method" Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_GetDescriptor.htm" />
+  <HelpKINode Title="KeyVaultConfigReader.KeyVaultConfigReader constructor" Url="html/Overload_PipServices_Azure_Config_KeyVaultConfigReader__ctor.htm" />
+  <HelpKINode Title="KeyVaultConfigReader.PerformReadConfig method" Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_PerformReadConfig.htm" />
+  <HelpKINode Title="KeyVaultConfigReader.ReadConfig method" Url="html/Overload_PipServices_Azure_Config_KeyVaultConfigReader_ReadConfig.htm" />
+  <HelpKINode Title="KeyVaultConfigReader.SetReferences method" Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_SetReferences.htm" />
+  <HelpKINode Title="ListenAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.ListenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_ListenAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.ListenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_ListenAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.ListenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ListenAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.ListenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_ListenAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Logger property">
+    <HelpKINode Title="MicroserviceStatefulService(TC).Logger Property " Url="html/P_PipServices_Azure_Run_MicroserviceStatefulService_1_Logger.htm" />
+    <HelpKINode Title="MicroserviceStatelessService(TC).Logger Property " Url="html/P_PipServices_Azure_Run_MicroserviceStatelessService_1_Logger.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MessageCount property">
+    <HelpKINode Title="ServiceBusMessageQueue.MessageCount Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageQueue_MessageCount.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.MessageCount Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic_MessageCount.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.MessageCount Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_MessageCount.htm" />
+    <HelpKINode Title="StorageMessageQueue.MessageCount Property " Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_MessageCount.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MicroserviceProcessContainer class">
+    <HelpKINode Title="MicroserviceProcessContainer Class" Url="html/T_PipServices_Azure_Run_MicroserviceProcessContainer.htm" />
+    <HelpKINode Title="about MicroserviceProcessContainer class" Url="html/T_PipServices_Azure_Run_MicroserviceProcessContainer.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PipServices_Azure_Run_MicroserviceProcessContainer__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_PipServices_Azure_Run_MicroserviceProcessContainer.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Run_MicroserviceProcessContainer.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Run_MicroserviceProcessContainer.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MicroserviceProcessContainer.GetService(Of T) method" Url="html/M_PipServices_Azure_Run_MicroserviceProcessContainer_GetService__1.htm" />
+  <HelpKINode Title="MicroserviceProcessContainer.GetService&lt;T&gt; method" Url="html/M_PipServices_Azure_Run_MicroserviceProcessContainer_GetService__1.htm" />
+  <HelpKINode Title="MicroserviceProcessContainer.MicroserviceProcessContainer constructor" Url="html/M_PipServices_Azure_Run_MicroserviceProcessContainer__ctor.htm" />
+  <HelpKINode Title="MicroserviceProcessContainer.RunWithConfigFileAsync method" Url="html/M_PipServices_Azure_Run_MicroserviceProcessContainer_RunWithConfigFileAsync.htm" />
+  <HelpKINode Title="MicroserviceProcessContainer.StopAsync method" Url="html/Overload_PipServices_Azure_Run_MicroserviceProcessContainer_StopAsync.htm" />
+  <HelpKINode Title="MicroserviceStatefulService(Of TC) class">
+    <HelpKINode Title="MicroserviceStatefulService(TC) Class" Url="html/T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+    <HelpKINode Title="about MicroserviceStatefulService(Of TC) class" Url="html/T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MicroserviceStatefulService(Of TC).Configure method" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_Configure.htm" />
+  <HelpKINode Title="MicroserviceStatefulService(Of TC).Controller property" Url="html/P_PipServices_Azure_Run_MicroserviceStatefulService_1_Controller.htm" />
+  <HelpKINode Title="MicroserviceStatefulService(Of TC).GetDescriptor method" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_GetDescriptor.htm" />
+  <HelpKINode Title="MicroserviceStatefulService(Of TC).Logger property" Url="html/P_PipServices_Azure_Run_MicroserviceStatefulService_1_Logger.htm" />
+  <HelpKINode Title="MicroserviceStatefulService(Of TC).MicroserviceStatefulService constructor" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1__ctor.htm" />
+  <HelpKINode Title="MicroserviceStatefulService(Of TC).SetReferences method" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_SetReferences.htm" />
+  <HelpKINode Title="MicroserviceStatefulService&lt;TC&gt; class">
+    <HelpKINode Title="MicroserviceStatefulService(TC) Class" Url="html/T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+    <HelpKINode Title="about MicroserviceStatefulService&lt;TC&gt; class" Url="html/T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MicroserviceStatefulService&lt;TC&gt;.Configure method" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_Configure.htm" />
+  <HelpKINode Title="MicroserviceStatefulService&lt;TC&gt;.Controller property" Url="html/P_PipServices_Azure_Run_MicroserviceStatefulService_1_Controller.htm" />
+  <HelpKINode Title="MicroserviceStatefulService&lt;TC&gt;.GetDescriptor method" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_GetDescriptor.htm" />
+  <HelpKINode Title="MicroserviceStatefulService&lt;TC&gt;.Logger property" Url="html/P_PipServices_Azure_Run_MicroserviceStatefulService_1_Logger.htm" />
+  <HelpKINode Title="MicroserviceStatefulService&lt;TC&gt;.MicroserviceStatefulService constructor" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1__ctor.htm" />
+  <HelpKINode Title="MicroserviceStatefulService&lt;TC&gt;.SetReferences method" Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_SetReferences.htm" />
+  <HelpKINode Title="MicroserviceStatelessService(Of TC) class">
+    <HelpKINode Title="MicroserviceStatelessService(TC) Class" Url="html/T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+    <HelpKINode Title="about MicroserviceStatelessService(Of TC) class" Url="html/T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MicroserviceStatelessService(Of TC).Configure method" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_Configure.htm" />
+  <HelpKINode Title="MicroserviceStatelessService(Of TC).Controller property" Url="html/P_PipServices_Azure_Run_MicroserviceStatelessService_1_Controller.htm" />
+  <HelpKINode Title="MicroserviceStatelessService(Of TC).GetDescriptor method" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_GetDescriptor.htm" />
+  <HelpKINode Title="MicroserviceStatelessService(Of TC).Logger property" Url="html/P_PipServices_Azure_Run_MicroserviceStatelessService_1_Logger.htm" />
+  <HelpKINode Title="MicroserviceStatelessService(Of TC).MicroserviceStatelessService constructor" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1__ctor.htm" />
+  <HelpKINode Title="MicroserviceStatelessService(Of TC).SetReferences method" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_SetReferences.htm" />
+  <HelpKINode Title="MicroserviceStatelessService&lt;TC&gt; class">
+    <HelpKINode Title="MicroserviceStatelessService(TC) Class" Url="html/T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+    <HelpKINode Title="about MicroserviceStatelessService&lt;TC&gt; class" Url="html/T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+    <HelpKINode Title="constructor" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MicroserviceStatelessService&lt;TC&gt;.Configure method" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_Configure.htm" />
+  <HelpKINode Title="MicroserviceStatelessService&lt;TC&gt;.Controller property" Url="html/P_PipServices_Azure_Run_MicroserviceStatelessService_1_Controller.htm" />
+  <HelpKINode Title="MicroserviceStatelessService&lt;TC&gt;.GetDescriptor method" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_GetDescriptor.htm" />
+  <HelpKINode Title="MicroserviceStatelessService&lt;TC&gt;.Logger property" Url="html/P_PipServices_Azure_Run_MicroserviceStatelessService_1_Logger.htm" />
+  <HelpKINode Title="MicroserviceStatelessService&lt;TC&gt;.MicroserviceStatelessService constructor" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1__ctor.htm" />
+  <HelpKINode Title="MicroserviceStatelessService&lt;TC&gt;.SetReferences method" Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_SetReferences.htm" />
+  <HelpKINode Title="MoveToDeadLetterAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.MoveToDeadLetterAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_MoveToDeadLetterAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.MoveToDeadLetterAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_MoveToDeadLetterAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.MoveToDeadLetterAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_MoveToDeadLetterAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.MoveToDeadLetterAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_MoveToDeadLetterAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="AppInsightsCounters.Name Property " Url="html/P_PipServices_Azure_Count_AppInsightsCounters_Name.htm" />
+    <HelpKINode Title="AppInsightsLogger.Name Property " Url="html/P_PipServices_Azure_Log_AppInsightsLogger_Name.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OpenAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.OpenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_OpenAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.OpenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_OpenAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.OpenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_OpenAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.OpenAsync Method " Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_OpenAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PeekAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.PeekAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_PeekAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.PeekAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_PeekAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.PeekAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_PeekAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.PeekAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_PeekAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PeekBatchAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.PeekBatchAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_PeekBatchAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.PeekBatchAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_PeekBatchAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.PeekBatchAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_PeekBatchAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.PeekBatchAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_PeekBatchAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PerformReadConfig method" Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_PerformReadConfig.htm" />
+  <HelpKINode Title="PipServices.Azure.Auth namespace" Url="html/N_PipServices_Azure_Auth.htm" />
+  <HelpKINode Title="PipServices.Azure.Auth.KeyVaultClient class" Url="html/T_PipServices_Azure_Auth_KeyVaultClient.htm" />
+  <HelpKINode Title="PipServices.Azure.Config namespace" Url="html/N_PipServices_Azure_Config.htm" />
+  <HelpKINode Title="PipServices.Azure.Config.KeyVaultConfigReader class" Url="html/T_PipServices_Azure_Config_KeyVaultConfigReader.htm" />
+  <HelpKINode Title="PipServices.Azure.Count namespace" Url="html/N_PipServices_Azure_Count.htm" />
+  <HelpKINode Title="PipServices.Azure.Count.AppInsightsCounters class" Url="html/T_PipServices_Azure_Count_AppInsightsCounters.htm" />
+  <HelpKINode Title="PipServices.Azure.Log namespace" Url="html/N_PipServices_Azure_Log.htm" />
+  <HelpKINode Title="PipServices.Azure.Log.AppInsightsLogger class" Url="html/T_PipServices_Azure_Log_AppInsightsLogger.htm" />
+  <HelpKINode Title="PipServices.Azure.Messaging namespace" Url="html/N_PipServices_Azure_Messaging.htm" />
+  <HelpKINode Title="PipServices.Azure.Messaging.ServiceBusMessageQueue class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm" />
+  <HelpKINode Title="PipServices.Azure.Messaging.ServiceBusMessageTopic class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm" />
+  <HelpKINode Title="PipServices.Azure.Messaging.ServiceBusMessageTopic2 class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm" />
+  <HelpKINode Title="PipServices.Azure.Messaging.StorageMessageQueue class" Url="html/T_PipServices_Azure_Messaging_StorageMessageQueue.htm" />
+  <HelpKINode Title="PipServices.Azure.Run namespace" Url="html/N_PipServices_Azure_Run.htm" />
+  <HelpKINode Title="PipServices.Azure.Run.MicroserviceProcessContainer class" Url="html/T_PipServices_Azure_Run_MicroserviceProcessContainer.htm" />
+  <HelpKINode Title="PipServices.Azure.Run.MicroserviceStatefulService(Of TC) class" Url="html/T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+  <HelpKINode Title="PipServices.Azure.Run.MicroserviceStatefulService&lt;TC&gt; class" Url="html/T_PipServices_Azure_Run_MicroserviceStatefulService_1.htm" />
+  <HelpKINode Title="PipServices.Azure.Run.MicroserviceStatelessService(Of TC) class" Url="html/T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+  <HelpKINode Title="PipServices.Azure.Run.MicroserviceStatelessService&lt;TC&gt; class" Url="html/T_PipServices_Azure_Run_MicroserviceStatelessService_1.htm" />
+  <HelpKINode Title="ReadConfig method" Url="html/Overload_PipServices_Azure_Config_KeyVaultConfigReader_ReadConfig.htm" />
+  <HelpKINode Title="ReceiveAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.ReceiveAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_ReceiveAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.ReceiveAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_ReceiveAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.ReceiveAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ReceiveAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.ReceiveAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_ReceiveAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RenewLockAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.RenewLockAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_RenewLockAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.RenewLockAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_RenewLockAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.RenewLockAsync Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_RenewLockAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.RenewLockAsync Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_RenewLockAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RunWithConfigFileAsync method" Url="html/M_PipServices_Azure_Run_MicroserviceProcessContainer_RunWithConfigFileAsync.htm" />
+  <HelpKINode Title="Save method" Url="html/M_PipServices_Azure_Count_AppInsightsCounters_Save.htm" />
+  <HelpKINode Title="SendAsync method">
+    <HelpKINode Title="ServiceBusMessageQueue.SendAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_SendAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.SendAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_SendAsync.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.SendAsync Method " Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_SendAsync.htm" />
+    <HelpKINode Title="StorageMessageQueue.SendAsync Method " Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_SendAsync.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceBusMessageQueue class">
+    <HelpKINode Title="ServiceBusMessageQueue Class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm" />
+    <HelpKINode Title="about ServiceBusMessageQueue class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Messaging_ServiceBusMessageQueue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceBusMessageQueue.AbandonAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_AbandonAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.ClearAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_ClearAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.CloseAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_CloseAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.CompleteAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_CompleteAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.EndListen method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_EndListen.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.ListenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_ListenAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.MessageCount property" Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageQueue_MessageCount.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.MoveToDeadLetterAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_MoveToDeadLetterAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.OpenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_OpenAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.PeekAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_PeekAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.PeekBatchAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_PeekBatchAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.ReceiveAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_ReceiveAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.RenewLockAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_RenewLockAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.SendAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_SendAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.ServiceBusMessageQueue constructor" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue__ctor.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic class">
+    <HelpKINode Title="ServiceBusMessageTopic Class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm" />
+    <HelpKINode Title="about ServiceBusMessageTopic class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Messaging_ServiceBusMessageTopic.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceBusMessageTopic.AbandonAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_AbandonAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.ClearAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_ClearAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.CloseAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_CloseAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.CompleteAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_CompleteAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.EndListen method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_EndListen.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.ListenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_ListenAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.MessageCount property" Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic_MessageCount.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.MoveToDeadLetterAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_MoveToDeadLetterAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.OpenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_OpenAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.PeekAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_PeekAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.PeekBatchAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_PeekBatchAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.ReceiveAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_ReceiveAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.RenewLockAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_RenewLockAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.SendAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_SendAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.ServiceBusMessageTopic constructor" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic__ctor.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2 class">
+    <HelpKINode Title="ServiceBusMessageTopic2 Class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm" />
+    <HelpKINode Title="about ServiceBusMessageTopic2 class" Url="html/T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Messaging_ServiceBusMessageTopic2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceBusMessageTopic2.AbandonAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_AbandonAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.ClearAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ClearAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.CloseAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_CloseAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.CompleteAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_CompleteAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.Configure method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Configure.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.EndListen method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_EndListen.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.Interval property" Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Interval.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.ListenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ListenAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.MessageCount property" Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_MessageCount.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.MoveToDeadLetterAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_MoveToDeadLetterAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.OpenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_OpenAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.PeekAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_PeekAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.PeekBatchAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_PeekBatchAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.ReceiveAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ReceiveAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.RenewLockAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_RenewLockAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.SendAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_SendAsync.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.ServiceBusMessageTopic2 constructor" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2__ctor.htm" />
+  <HelpKINode Title="SetReferences method">
+    <HelpKINode Title="KeyVaultConfigReader.SetReferences Method " Url="html/M_PipServices_Azure_Config_KeyVaultConfigReader_SetReferences.htm" />
+    <HelpKINode Title="MicroserviceStatefulService(TC).SetReferences Method " Url="html/M_PipServices_Azure_Run_MicroserviceStatefulService_1_SetReferences.htm" />
+    <HelpKINode Title="MicroserviceStatelessService(TC).SetReferences Method " Url="html/M_PipServices_Azure_Run_MicroserviceStatelessService_1_SetReferences.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StopAsync method" Url="html/Overload_PipServices_Azure_Run_MicroserviceProcessContainer_StopAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue class">
+    <HelpKINode Title="StorageMessageQueue Class" Url="html/T_PipServices_Azure_Messaging_StorageMessageQueue.htm" />
+    <HelpKINode Title="about StorageMessageQueue class" Url="html/T_PipServices_Azure_Messaging_StorageMessageQueue.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_PipServices_Azure_Messaging_StorageMessageQueue.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_PipServices_Azure_Messaging_StorageMessageQueue.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_PipServices_Azure_Messaging_StorageMessageQueue.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StorageMessageQueue.AbandonAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_AbandonAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.ClearAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_ClearAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.CloseAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_CloseAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.CompleteAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_CompleteAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.Configure method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_Configure.htm" />
+  <HelpKINode Title="StorageMessageQueue.EndListen method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_EndListen.htm" />
+  <HelpKINode Title="StorageMessageQueue.Interval property" Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_Interval.htm" />
+  <HelpKINode Title="StorageMessageQueue.ListenAsync method" Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_ListenAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.MessageCount property" Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_MessageCount.htm" />
+  <HelpKINode Title="StorageMessageQueue.MoveToDeadLetterAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_MoveToDeadLetterAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.OpenAsync method" Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_OpenAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.PeekAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_PeekAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.PeekBatchAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_PeekBatchAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.ReceiveAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_ReceiveAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.RenewLockAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_RenewLockAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.SendAsync method" Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_SendAsync.htm" />
+  <HelpKINode Title="StorageMessageQueue.StorageMessageQueue constructor" Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue__ctor.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.9" Url="html/9a0c8e3f-c6ff-4766-aa4e-dc6181bd3e39.htm" />
+    <HelpKINode Title="history" Url="html/a91d3f05-4065-4833-a966-e067b1815ca6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Welcome" Url="html/2c590b49-022b-4271-81bf-e811e45e45f3.htm" />
+  <HelpKINode Title="Write method" Url="html/M_PipServices_Azure_Log_AppInsightsLogger_Write.htm" />
+</HelpKI>

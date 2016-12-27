@@ -22,7 +22,7 @@ namespace DummyStatelessService.Logic
 
         public DummyController()
         {
-            _timer = new FixedRateTimer(async () => { await NotifyAsync(null); }, 1000, 1000);
+            _timer = new FixedRateTimer(async () => { await NotifyAsync(null, new Parameters()); }, 1000, 1000);
         }
 
         public void Configure(ConfigParams config)
@@ -54,7 +54,7 @@ namespace DummyStatelessService.Logic
             return Task.Delay(0);
         }
 
-        public Task NotifyAsync(string correlationId)
+        public Task NotifyAsync(string correlationId, Parameters args)
         {
             _logger.Info(correlationId, "{0} - {1}", Counter++, Message);
 
