@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="refresh" content="1;url=html/2c590b49-022b-4271-81bf-e811e45e45f3.htm">
 	<script type="text/javascript">
-		window.location.replace("html/2c590b49-022b-4271-81bf-e811e45e45f3.htm")
+        var base = window.location.href;
+        base = base.substr(0, base.lastIndexOf("/") + 1);
+        window.location.replace(base + "html/2c590b49-022b-4271-81bf-e811e45e45f3.htm");
 	</script>
 	<title>A Sandcastle Documented Class Library - Redirect</title>
 </head>
