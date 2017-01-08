@@ -1,6 +1,6 @@
 # Azure components for Pip.Services in .NET Changelog
 
-## <a name="1.0.1-1.0.2"></a> 1.0.1-1.0.2 (2016-12-13)
+## <a name="1.0.1-1.0.5"></a> 1.0.1-1.0.2 (2017-01-07)
 
 ### Bug Fixes
 * Updated documentation

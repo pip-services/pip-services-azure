@@ -57,6 +57,11 @@ namespace PipServices.Azure.Messaging
                 throw new InvalidStateException(correlationId, "NOT_OPENED", "The queue is not opened");
         }
 
+        public override bool IsOpened()
+        {
+            return _client != null && _manager != null;
+        }
+
         public async override Task OpenAsync(string correlationId, ConnectionParams connection, CredentialParams credential)
         {
             _topicName = connection.GetAsNullableString("topic") ?? Name;

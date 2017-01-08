@@ -61,11 +61,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PipServices.Commons, Version=1.0.29.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\PipServices.Commons.1.0.39\lib\net45\PipServices.Commons.dll</HintPath>
+      <HintPath>..\packages\PipServices.Commons.1.0.40\lib\net45\PipServices.Commons.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PipServices.Container, Version=1.0.11.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\PipServices.Container.1.0.12\lib\net45\PipServices.Container.dll</HintPath>
+      <HintPath>..\packages\PipServices.Container.1.0.13\lib\net45\PipServices.Container.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ServiceFabricServiceModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64">

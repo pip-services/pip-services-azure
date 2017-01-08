@@ -9,7 +9,7 @@ using PipServices.Commons.Run;
 
 namespace DummyStatelessService.Logic
 {
-    public sealed class DummyController : IReferenceable, IReconfigurable, IOpenable, IClosable, INotifiable,
+    public sealed class DummyController : IReferenceable, IReconfigurable, IOpenable, INotifiable,
         IDummyController, IDescriptable
     {
         public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "controller", "azure", "default", "1.0");
@@ -35,6 +35,11 @@ namespace DummyStatelessService.Logic
             _logger.SetReferences(references);
 
             _persistence = new List<DummyObject>();
+        }
+
+        public bool IsOpened()
+        {
+            return _timer.IsStarted;
         }
 
         public Task OpenAsync(string correlationId)
