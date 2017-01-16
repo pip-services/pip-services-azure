@@ -17,7 +17,6 @@ copy ..\..\..\..\Settings.xml Config\Settings.xml
 copy ..\..\..\..\DummyStatelessService\PackageRoot\ServiceManifest.xml ServiceManifest.xml
 CD ..
 copy ..\..\..\PipServices.Dummy.Application\ApplicationPackageRoot\ApplicationManifest.xml ApplicationManifest.xml
-copy ..\..\..\PipServices.Dummy.Application\ApplicationPackageRoot\ApplicationManifest.xml ApplicationManifest.xml
 
 CD /d %OLDDIR%
 
