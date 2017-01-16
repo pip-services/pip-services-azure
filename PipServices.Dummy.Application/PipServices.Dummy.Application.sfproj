@@ -25,7 +25,6 @@
   <ItemGroup>
     <Content Include="ApplicationParameters\Local.1Node.xml" />
     <Content Include="ApplicationParameters\Local.5Node.xml" />
-    <Content Include="Deploy.cmd" />
     <Content Include="packages.config" />
     <Content Include="PublishProfiles\Local.1Node.xml" />
     <Content Include="PublishProfiles\Local.5Node.xml" />
