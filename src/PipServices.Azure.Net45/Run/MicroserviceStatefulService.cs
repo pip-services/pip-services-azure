@@ -44,7 +44,7 @@ namespace PipServices.Azure.Run
         {
             Logger.SetReferences(references);
 
-            var locater = new Descriptor("*", "controller", "azure", "*", "*");
+            var locater = new Descriptor("*", "controller", "*", "*", "*");
 
             Controller = references.GetOneRequired<TC>(locater);
 

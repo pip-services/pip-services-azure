@@ -15,7 +15,7 @@ namespace DummyStatelessService.Build
     {
         private IReferences _references;
 
-        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "factory", "azure", "default", "1.0");
+        public static Descriptor Descriptor { get; } = new Descriptor("pip-services-dummies", "factory", "default", "default", "1.0");
 
         public static Descriptor ContextDescriptor { get; } = new Descriptor("pip-services-dummies", "context", "azure", "stateless", "1.0");
 

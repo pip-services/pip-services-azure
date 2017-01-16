@@ -87,6 +87,12 @@
     <HelpKINode Title="ServiceBusMessageTopic2.Interval Property " Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Interval.htm" />
     <HelpKINode Title="StorageMessageQueue.Interval Property " Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_Interval.htm" />
   </HelpKINode>
+  <HelpKINode Title="IsOpened method">
+    <HelpKINode Title="ServiceBusMessageQueue.IsOpened Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_IsOpened.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic.IsOpened Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_IsOpened.htm" />
+    <HelpKINode Title="ServiceBusMessageTopic2.IsOpened Method " Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_IsOpened.htm" />
+    <HelpKINode Title="StorageMessageQueue.IsOpened Method " Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_IsOpened.htm" />
+  </HelpKINode>
   <HelpKINode Title="KeyVaultClient class">
     <HelpKINode Title="KeyVaultClient Class" Url="html/T_PipServices_Azure_Auth_KeyVaultClient.htm" />
     <HelpKINode Title="about KeyVaultClient class" Url="html/T_PipServices_Azure_Auth_KeyVaultClient.htm" />
@@ -275,6 +281,7 @@
   <HelpKINode Title="ServiceBusMessageQueue.CloseAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_CloseAsync.htm" />
   <HelpKINode Title="ServiceBusMessageQueue.CompleteAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_CompleteAsync.htm" />
   <HelpKINode Title="ServiceBusMessageQueue.EndListen method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_EndListen.htm" />
+  <HelpKINode Title="ServiceBusMessageQueue.IsOpened method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_IsOpened.htm" />
   <HelpKINode Title="ServiceBusMessageQueue.ListenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageQueue_ListenAsync.htm" />
   <HelpKINode Title="ServiceBusMessageQueue.MessageCount property" Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageQueue_MessageCount.htm" />
   <HelpKINode Title="ServiceBusMessageQueue.MoveToDeadLetterAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageQueue_MoveToDeadLetterAsync.htm" />
@@ -298,6 +305,7 @@
   <HelpKINode Title="ServiceBusMessageTopic.CloseAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_CloseAsync.htm" />
   <HelpKINode Title="ServiceBusMessageTopic.CompleteAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_CompleteAsync.htm" />
   <HelpKINode Title="ServiceBusMessageTopic.EndListen method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_EndListen.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic.IsOpened method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_IsOpened.htm" />
   <HelpKINode Title="ServiceBusMessageTopic.ListenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic_ListenAsync.htm" />
   <HelpKINode Title="ServiceBusMessageTopic.MessageCount property" Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic_MessageCount.htm" />
   <HelpKINode Title="ServiceBusMessageTopic.MoveToDeadLetterAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic_MoveToDeadLetterAsync.htm" />
@@ -323,6 +331,7 @@
   <HelpKINode Title="ServiceBusMessageTopic2.Configure method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Configure.htm" />
   <HelpKINode Title="ServiceBusMessageTopic2.EndListen method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_EndListen.htm" />
   <HelpKINode Title="ServiceBusMessageTopic2.Interval property" Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_Interval.htm" />
+  <HelpKINode Title="ServiceBusMessageTopic2.IsOpened method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_IsOpened.htm" />
   <HelpKINode Title="ServiceBusMessageTopic2.ListenAsync method" Url="html/Overload_PipServices_Azure_Messaging_ServiceBusMessageTopic2_ListenAsync.htm" />
   <HelpKINode Title="ServiceBusMessageTopic2.MessageCount property" Url="html/P_PipServices_Azure_Messaging_ServiceBusMessageTopic2_MessageCount.htm" />
   <HelpKINode Title="ServiceBusMessageTopic2.MoveToDeadLetterAsync method" Url="html/M_PipServices_Azure_Messaging_ServiceBusMessageTopic2_MoveToDeadLetterAsync.htm" />
@@ -354,6 +363,7 @@
   <HelpKINode Title="StorageMessageQueue.Configure method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_Configure.htm" />
   <HelpKINode Title="StorageMessageQueue.EndListen method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_EndListen.htm" />
   <HelpKINode Title="StorageMessageQueue.Interval property" Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_Interval.htm" />
+  <HelpKINode Title="StorageMessageQueue.IsOpened method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_IsOpened.htm" />
   <HelpKINode Title="StorageMessageQueue.ListenAsync method" Url="html/Overload_PipServices_Azure_Messaging_StorageMessageQueue_ListenAsync.htm" />
   <HelpKINode Title="StorageMessageQueue.MessageCount property" Url="html/P_PipServices_Azure_Messaging_StorageMessageQueue_MessageCount.htm" />
   <HelpKINode Title="StorageMessageQueue.MoveToDeadLetterAsync method" Url="html/M_PipServices_Azure_Messaging_StorageMessageQueue_MoveToDeadLetterAsync.htm" />

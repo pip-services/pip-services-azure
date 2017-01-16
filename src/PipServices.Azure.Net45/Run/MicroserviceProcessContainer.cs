@@ -114,7 +114,7 @@ namespace PipServices.Azure.Run
             if ( !typeof(StatelessService).IsAssignableFrom(typeof(T)) && !typeof(StatefulService).IsAssignableFrom(typeof(T)))
                 throw new ArgumentException("Service should be derived from either StatelessService or StatefulService", nameof(T));
 
-            return References.GetOneRequired<T>(new Descriptor("*", "service", "azure", "*", "*"));
+            return References.GetOneRequired<T>(new Descriptor("*", "service", "azure-stateless", "*", "*"));
         }
     }
 }

@@ -3,6 +3,6 @@
 - descriptor: "pip-services-commons:logger:console:*:*"
   level: "trace"
 
-- descriptor: "pip-services-dummies:controller:azure:*:*"
+- descriptor: "pip-services-dummies:controller:*:*:*"
 
-- descriptor: "pip-services-dummies:service:azure:stateless:*"
+- descriptor: "pip-services-dummies:service:azure-stateless:*:*"
