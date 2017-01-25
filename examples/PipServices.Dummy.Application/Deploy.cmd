@@ -1,1 +1,0 @@
-powershell.exe . Scripts\Deploy-FabricApplication.ps1 -ApplicationPackagePath 'pkg\Debug'

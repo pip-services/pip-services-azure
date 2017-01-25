@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.4.0\build\Microsoft.VisualStudio.Azure.Fabric.Application.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.4.0\build\Microsoft.VisualStudio.Azure.Fabric.Application.props')" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>9439d2e1-29c9-4ba4-8111-f7479c71bdd8</ProjectGuid>
+    <ProjectGuid>e67cc629-3b25-477d-b3d9-3f3cf7b1fa04</ProjectGuid>
     <ProjectVersion>1.4</ProjectVersion>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
@@ -18,19 +18,19 @@
   <ItemGroup>
     <None Include="ApplicationPackageRoot\ApplicationManifest.xml" />
     <None Include="ApplicationParameters\Cloud.xml" />
+    <None Include="ApplicationParameters\Local.1Node.xml" />
+    <None Include="ApplicationParameters\Local.5Node.xml" />
     <None Include="PublishProfiles\Cloud.xml" />
+    <None Include="PublishProfiles\Local.1Node.xml" />
+    <None Include="PublishProfiles\Local.5Node.xml" />
     <None Include="Scripts\Deploy-FabricApplication.ps1" />
     <None Include="Scripts\update-cluster-dummy.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationParameters\Local.1Node.xml" />
-    <Content Include="ApplicationParameters\Local.5Node.xml" />
     <Content Include="packages.config" />
-    <Content Include="PublishProfiles\Local.1Node.xml" />
-    <Content Include="PublishProfiles\Local.5Node.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DummyStatelessService\DummyStatelessService.csproj" />
+    <ProjectReference Include="..\examples\DummyStatelessService\DummyStatelessService.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>

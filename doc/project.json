@@ -2,10 +2,7 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "Microsoft.ServiceFabric.Services": "2.3.311",
-    "NETStandard.Library": "1.6.0",
-    "System.Spatial": "5.7.0",
-    "WindowsAzure.Storage": "7.2.1"
+    "NETStandard.Library": "1.6.0"
   },
 
   "frameworks": {
