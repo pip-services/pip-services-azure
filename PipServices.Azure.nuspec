@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PipServices.Azure</id>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <title>PipServices.Azure</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
 
@@ -13,7 +13,7 @@
 
     <description>Azure components for Pip.Services in .NET</description>
     <releaseNotes>Pre release</releaseNotes>
-    <copyright>Conceptual Vision Consulting LLC. 2016</copyright>
+    <copyright>Conceptual Vision Consulting LLC. 2016 - 2017</copyright>
     <tags>pip-services microservices framework azure</tags>
 
     <dependencies>

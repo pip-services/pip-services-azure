@@ -3,6 +3,7 @@ using Microsoft.ServiceBus.Messaging;
 using PipServices.Commons.Auth;
 using PipServices.Commons.Config;
 using PipServices.Commons.Connect;
+using PipServices.Commons.Data;
 using PipServices.Commons.Errors;
 using PipServices.Net.Messaging;
 using System;
@@ -18,6 +19,7 @@ namespace PipServices.Azure.Messaging
         private string _subscriptionName;
         private string _connectionString;
         private TopicClient _topic;
+        private bool _tempSubscriber;
         private SubscriptionClient _subscription;
         private NamespaceManager _manager;
 
@@ -54,7 +56,8 @@ namespace PipServices.Azure.Messaging
         public async override Task OpenAsync(string correlationId, ConnectionParams connection, CredentialParams credential)
         {
             _topicName = connection.GetAsNullableString("topic") ?? Name;
-            _subscriptionName = connection.Get("Subscription") ?? "AllMessages";
+            _tempSubscriber = connection.Get("Subscription") == null;
+            _subscriptionName = connection.Get("Subscription") ?? IdGenerator.NextLong(); // "AllMessages";
 
             _connectionString = ConfigParams.FromTuples(
                 "Endpoint", connection.GetAsNullableString("uri") ?? connection.GetAsNullableString("Endpoint"),
@@ -71,8 +74,15 @@ namespace PipServices.Azure.Messaging
         {
             if (_topic != null && _topic.IsClosed == false)
                 await _topic.CloseAsync();
+
             if (_subscription != null && _subscription.IsClosed == false)
+            {
                 await _subscription.CloseAsync();
+
+                // Remove temporary subscriber
+                if (_tempSubscriber == true)
+                    _manager.DeleteSubscription(_topicName, _subscriptionName);
+            }
 
             _logger.Trace(correlationId, "Closed queue {0}", this);
         }
@@ -114,7 +124,20 @@ namespace PipServices.Azure.Messaging
                     {
                         // Create subscript if it doesn't exist
                         if (!_manager.SubscriptionExists(_topicName, _subscriptionName))
-                            _manager.CreateSubscription(_topicName, _subscriptionName);
+                        {
+                            if (!_tempSubscriber)
+                            {
+                                // Create permanent subscription
+                                _manager.CreateSubscription(_topicName, _subscriptionName);
+                            }
+                            else
+                            {
+                                // Create temporary subscription
+                                var description = new SubscriptionDescription(_topicName, _subscriptionName);
+                                description.AutoDeleteOnIdle = TimeSpan.FromMinutes(5);
+                                _manager.CreateSubscription(description);
+                            }
+                        }
 
                         _logger.Info(null, "Connecting subscription {0} to Topic={1};Subscription={2};{3}",
                             Name, _topic, _subscription, _connectionString);

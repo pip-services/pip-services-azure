@@ -27,9 +27,9 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "doc", "doc\doc.xproj", "{70
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{CA3645CA-F6A7-4EF7-A44D-6AE8BE86C6D6}"
 EndProject
-Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "PipServices.Dummy.Application", "PipServices.Dummy.Application\PipServices.Dummy.Application.sfproj", "{9439D2E1-29C9-4BA4-8111-F7479C71BDD8}"
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "PipServices.Dummy.Application", "examples\PipServices.Dummy.Application\PipServices.Dummy.Application.sfproj", "{9439D2E1-29C9-4BA4-8111-F7479C71BDD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyStatelessService", "DummyStatelessService\DummyStatelessService.csproj", "{F1CD6C03-B7B6-433E-8630-56D036FF6F88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyStatelessService", "examples\DummyStatelessService\DummyStatelessService.csproj", "{F1CD6C03-B7B6-433E-8630-56D036FF6F88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

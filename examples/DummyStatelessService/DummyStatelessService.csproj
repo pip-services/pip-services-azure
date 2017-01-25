@@ -109,7 +109,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\PipServices.Azure.Net45\PipServices.Azure.Net45.csproj">
+    <ProjectReference Include="..\..\src\PipServices.Azure.Net45\PipServices.Azure.Net45.csproj">
       <Project>{616316bd-8017-4734-85fd-f5caa5f2605d}</Project>
       <Name>PipServices.Azure.Net45</Name>
     </ProjectReference>
