@@ -1,8 +1,0 @@
-﻿- type: "DummyStatelessService.Build.DummyStatelessServiceFactory,DummyStatelessService"
-
-- descriptor: "pip-services-commons:logger:console:*:*"
-  level: "trace"
-
-- descriptor: "pip-services-dummies:controller:*:*:*"
-
-- descriptor: "pip-services-dummies:service:azure-stateless:*:*"
