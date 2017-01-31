@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PipServices.Azure</id>
-    <version>1.0.10</version>
+    <version>1.0.11</version>
     <title>PipServices.Azure</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
 
@@ -26,7 +26,7 @@
         <dependency id="Microsoft.IdentityModel.Clients.ActiveDirectory" version="3.13.8" />
         <dependency id="Microsoft.ServiceFabric.Actors" version="2.3.311" />
         <dependency id="WindowsAzure.ServiceBus" version="3.4.3" />
-        <dependency id="WindowsAzure.Storage" version="7.2.1" />
+        <dependency id="WindowsAzure.Storage" version="8.0.1" />
       </group>
     </dependencies>
   </metadata>
