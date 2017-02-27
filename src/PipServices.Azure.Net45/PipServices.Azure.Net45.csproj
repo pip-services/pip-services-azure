@@ -126,16 +126,16 @@
       <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PipServices.Commons, Version=1.0.29.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PipServices.Commons.1.0.43\lib\net45\PipServices.Commons.dll</HintPath>
+    <Reference Include="PipServices.Commons, Version=1.0.45.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PipServices.Commons.2.0.1\lib\net45\PipServices.Commons.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PipServices.Container, Version=1.0.14.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PipServices.Container.1.0.16\lib\net45\PipServices.Container.dll</HintPath>
+    <Reference Include="PipServices.Container, Version=1.0.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PipServices.Container.2.0.0\lib\net45\PipServices.Container.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="PipServices.Net, Version=1.0.13.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PipServices.Net.1.0.14\lib\net45\PipServices.Net.dll</HintPath>
+    <Reference Include="PipServices.Net, Version=1.0.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PipServices.Net.2.0.1\lib\net45\PipServices.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ServiceFabricServiceModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64">

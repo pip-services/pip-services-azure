@@ -10,22 +10,16 @@ namespace PipServices.Azure.Config
     /// <summary>
     /// Reads configuration from Azure KeyVault secrets. Secret key becomes a parameter name
     /// </summary>
-    public class KeyVaultConfigReader : CachedConfigReader, IDescriptable, IReferenceable, IConfigurable
+    public class KeyVaultConfigReader : CachedConfigReader, IReferenceable, IConfigurable
     {
         private ConnectionResolver _connectionResolver = new ConnectionResolver();
         private CredentialResolver _credentialResolver = new CredentialResolver();
 
         public KeyVaultConfigReader() { }
 
-        public KeyVaultConfigReader(string name, ConfigParams config)
-            : base(name)
+        public KeyVaultConfigReader(ConfigParams config)
         {
             if (config != null) Configure(config);
-        }
-
-        public virtual Descriptor GetDescriptor()
-        {
-            return new Descriptor("pip-services-azure", "config-reader", "keyvault", Name ?? "default", "1.0");
         }
 
         public virtual void SetReferences(IReferences references)
@@ -69,13 +63,13 @@ namespace PipServices.Azure.Config
 
         public static ConfigParams ReadConfig(string correlationId, ConfigParams config)
         {
-            return new KeyVaultConfigReader(null, config).ReadConfig(correlationId);
+            return new KeyVaultConfigReader(config).ReadConfig(correlationId);
         }
 
         public static ConfigParams ReadConfig(string correlationId, string connectionString)
         {
             var config = ConfigParams.FromString(connectionString);
-            return new KeyVaultConfigReader(null, config).ReadConfig(correlationId);
+            return new KeyVaultConfigReader(config).ReadConfig(correlationId);
         }
     }
 }

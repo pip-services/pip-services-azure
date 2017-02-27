@@ -8,31 +8,17 @@ using System.Collections.Generic;
 
 namespace PipServices.Azure.Count
 {
-    public class AppInsightsCounters : CachedCounters, IDescriptable
+    public class AppInsightsCounters : CachedCounters
     {
-        private string _name;
         private CredentialResolver _credentialResolver = new CredentialResolver();
         private TelemetryClient _client;
 
         public AppInsightsCounters() { }
 
-        public virtual Descriptor GetDescriptor()
-        {
-            var name = _name ?? "default";
-            return new Descriptor("pip-services-azure", "counters", "app-insights", name, "1.0");
-        }
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
-
         public override void Configure(ConfigParams config)
         {
             base.Configure(config);
             _credentialResolver.Configure(config, true);
-            _name = NameResolver.Resolve(config, _name);
         }
 
         private void Open()

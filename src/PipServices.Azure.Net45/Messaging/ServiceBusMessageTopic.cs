@@ -92,6 +92,7 @@ namespace PipServices.Azure.Messaging
             get
             {
                 CheckOpened(null);
+                var subscription = GetSubscription();
                 var subscriptionDescription = _manager.GetSubscription(_topicName, _subscriptionName);
                 return subscriptionDescription.MessageCount;
             }

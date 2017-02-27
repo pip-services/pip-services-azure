@@ -6,7 +6,7 @@ using PipServices.Commons.Refer;
 
 namespace PipServices.Azure.Run
 {
-    public abstract class MicroserviceStatefulService<TC> : StatefulService, IDescriptable, IReferenceable, IReconfigurable
+    public abstract class MicroserviceStatefulService<TC> : StatefulService, IReferenceable, IReconfigurable
         where TC : class
     {
         /// <summary>
@@ -29,12 +29,6 @@ namespace PipServices.Azure.Run
             : base(serviceContext)
         {
         }
-
-        /// <summary>
-        /// Gets the descriptor.
-        /// </summary>
-        /// <returns>Descriptor.</returns>
-        public abstract Descriptor GetDescriptor();
 
         /// <summary>
         /// Sets the references.

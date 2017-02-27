@@ -108,6 +108,16 @@ namespace PipServices.Azure.Messaging
             Assert.AreEqual(envelop1.CorrelationId, envelop2.CorrelationId);
         }
 
+        public async Task TestMessageCountAsync()
+        {
+            var envelop1 = new MessageEnvelop("123", "Test", "Test message");
+            await _queue.SendAsync(null, envelop1);
+            await Task.Delay(500);
+            var count = _queue.MessageCount;
+            Assert.IsNotNull(count);
+            //Assert.IsTrue(count > 0);
+        }
+
         public async Task TestPeekNoMessageAsync()
         {
             var envelop = await _queue.PeekAsync(null);

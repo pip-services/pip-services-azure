@@ -17,29 +17,15 @@ namespace PipServices.Azure.Log
     /// </summary>
     /// <seealso cref="PipServices.Commons.Log.Logger" />
     /// <seealso cref="PipServices.Commons.Refer.IDescriptable" />
-    public class AppInsightsLogger : Logger, IDescriptable
+    public class AppInsightsLogger : Logger
     {
-        private string _name;
         private CredentialResolver _credentialResolver = new CredentialResolver();
         private TelemetryClient _client;
-
-        public virtual Descriptor GetDescriptor()
-        {
-            var name = _name ?? "default";
-            return new Descriptor("pip-services-azure", "logger", "app-insights", name, "1.0");
-        }
-
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; }
-        }
 
         public override void Configure(ConfigParams config)
         {
             base.Configure(config);
             _credentialResolver.Configure(config, true);
-            _name = NameResolver.Resolve(config, _name);
         }
 
         private SeverityLevel LevelToSeverity(LogLevel level)

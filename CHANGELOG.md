@@ -1,11 +1,9 @@
 # Azure components for Pip.Services in .NET Changelog
 
-## <a name="1.0.1-1.0.12"></a> 1.0.1-1.0.12 (2017-01-31)
+## <a name="2.0.0"></a> 2.0.0 (2017-02-27)
 
-### Bug Fixes
-* Updated documentation
-* Added checks for open state in queues
-* Added dynamic creation of temporary subscriptions for Service Bus topics
+### Breaking Changes
+* Migrated to **pip-services** 2.0
 
 ## <a name="1.0.0"></a> 1.0.0 (2016-12-10)
 
@@ -18,9 +16,8 @@ Initial public release
 * **log** AppInsights logger
 * **messaging** Azure Storage and Service Bus queues
 
-### Breaking Changes
-No breaking changes since this is the first version
-
 ### Bug Fixes
-No fixes in this version
+* Updated documentation
+* Added checks for open state in queues
+* Added dynamic creation of temporary subscriptions for Service Bus topics
 

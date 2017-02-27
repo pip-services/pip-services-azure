@@ -11,7 +11,7 @@ namespace PipServices.Azure.Run
     /// </summary>
     /// <typeparam name="TS"></typeparam>
     /// <typeparam name="TC"></typeparam>
-    public abstract class MicroserviceStatelessService<TC> : StatelessService, IDescriptable, IReferenceable, IReconfigurable
+    public abstract class MicroserviceStatelessService<TC> : StatelessService, IReferenceable, IReconfigurable
         where TC : class
     {
         /// <summary>

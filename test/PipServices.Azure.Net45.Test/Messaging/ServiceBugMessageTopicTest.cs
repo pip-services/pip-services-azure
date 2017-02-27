@@ -75,5 +75,12 @@ namespace PipServices.Azure.Messaging
         {
             await Fixture.TestMoveToDeadMessageAsync();
         }
+
+        [TestMethod]
+        [TestCategory("Build")]
+        public async Task TestSBTopicMessageCountAsync()
+        {
+            await Fixture.TestMessageCountAsync();
+        }
     }
 }
