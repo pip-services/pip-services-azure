@@ -26,7 +26,7 @@ namespace PipServices.Azure.Messaging
         public ServiceBusMessageTopic(string name = null)
         {
             Name = name;
-            Capabilities = new MessagingCapabilities(true, true, true, true, true, true, true, true, true);
+            Capabilities = new MessagingCapabilities(false, true, true, true, true, true, true, true, true);
         }
 
         public ServiceBusMessageTopic(string name, ConfigParams config)
@@ -91,6 +91,7 @@ namespace PipServices.Azure.Messaging
         {
             get
             {
+                // Commented because for dynamic topics it may create a new subscription on every call which causes failures
                 CheckOpened(null);
                 var subscription = GetSubscription();
                 var subscriptionDescription = _manager.GetSubscription(_topicName, _subscriptionName);

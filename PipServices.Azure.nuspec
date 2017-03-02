@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PipServices.Azure</id>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <title>PipServices.Azure</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
 
@@ -18,9 +18,9 @@
 
     <dependencies>
       <group targetFramework=".NETFramework4.5">
-        <dependency id="PipServices.Commons" version="2.0.1"/>
-        <dependency id="PipServices.Container" version="2.0.0"/>
-        <dependency id="PipServices.Net" version="2.0.1"/>
+        <dependency id="PipServices.Commons" version="2.0.3"/>
+        <dependency id="PipServices.Container" version="2.0.1"/>
+        <dependency id="PipServices.Net" version="2.0.2"/>
         <dependency id="Microsoft.ApplicationInsights" version="2.2.0" />
         <dependency id="Microsoft.Azure.KeyVault" version="1.0.0" />
         <dependency id="Microsoft.IdentityModel.Clients.ActiveDirectory" version="3.13.8" />
