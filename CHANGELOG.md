@@ -1,5 +1,10 @@
 # Azure components for Pip.Services in .NET Changelog
 
+## <a name="2.1.0"></a> 2.1.0 (2017-05-17)
+
+### Features
+* Migrated to Service Fabric 2.6 and latest versions of WindowsAzure.ServiceBus and WindowsAzure.Storage
+
 ## <a name="2.0.0"></a> 2.0.0 (2017-02-27)
 
 ### Breaking Changes

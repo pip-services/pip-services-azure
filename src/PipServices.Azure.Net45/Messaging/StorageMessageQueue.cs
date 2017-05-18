@@ -74,11 +74,11 @@ namespace PipServices.Azure.Messaging
             var storageAccount = CloudStorageAccount.Parse(connectionString);
             var client = storageAccount.CreateCloudQueueClient();
 
-            var queueName = connection.Get("Queue") ?? Name;
+            var queueName = connection.Get("queue") ?? Name;
             _queue = client.GetQueueReference(queueName);
             _queue.CreateIfNotExists();
 
-            var deadName = connection.Get("Dead");
+            var deadName = connection.Get("dead");
             _deadQueue = deadName != null ? client.GetQueueReference(deadName) : null;
 
             await Task.Delay(0);
