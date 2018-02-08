@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Conceptual Vision Consulting LLC.")]
 [assembly: AssemblyProduct("Pip.Services")]
-[assembly: AssemblyCopyright("Copyright © Conceptual Vision Consulting LLC. 2016")]
+[assembly: AssemblyCopyright("Copyright © Conceptual Vision Consulting LLC. 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.6.0")]
+[assembly: AssemblyVersion("1.0.13.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
