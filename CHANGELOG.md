@@ -1,6 +1,6 @@
 # Azure components for Pip.Services in .NET Changelog
 
-## <a name="1.0.13"></a> 1.0.13 (2018-02-07)
+## <a name="1.1.1"></a> 1.1.1 (2018-02-08)
 * Released to separate branch "master-1.x"
 
 ## <a name="1.0.1-1.0.12"></a> 1.0.1-1.0.12 (2017-01-31)
