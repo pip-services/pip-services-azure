@@ -1,6 +1,6 @@
 # Azure components for Pip.Services in .NET Changelog
 
-## <a name="2.2.0"></a> 2.2.0 (2018-04-05)
+## <a name="2.2.0-2.2.1"></a> 2.2.0-2.2.1 (2018-04-05)
 
 ### Features
 * Migrated to .NET Standard 2.0
