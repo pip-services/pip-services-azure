@@ -76,7 +76,7 @@ namespace PipServices.Azure.Messaging
 
             var queueName = connection.Get("queue") ?? Name;
             _queue = client.GetQueueReference(queueName);
-            _queue.CreateIfNotExists();
+            await _queue.CreateIfNotExistsAsync();
 
             var deadName = connection.Get("dead");
             _deadQueue = deadName != null ? client.GetQueueReference(deadName) : null;
@@ -98,7 +98,7 @@ namespace PipServices.Azure.Messaging
             get
             {
                 CheckOpened(null);
-                _queue.FetchAttributes();
+                _queue.FetchAttributesAsync().Wait();
                 return _queue.ApproximateMessageCount;
             }
         }
@@ -142,7 +142,7 @@ namespace PipServices.Azure.Messaging
             var content = JsonConverter.ToJson(message);
 
             var envelop = new CloudQueueMessage(content);
-            await _queue.AddMessageAsync(envelop, _cancel.Token);
+            await _queue.AddMessageAsync(envelop, null, null, null, null, _cancel.Token);
 
             _counters.IncrementOne("queue." + Name + ".sent_messages");
             _logger.Debug(message.CorrelationId, "Sent message {0} via {1}", message, this);
@@ -151,7 +151,7 @@ namespace PipServices.Azure.Messaging
         public override async Task<MessageEnvelop> PeekAsync(string correlationId)
         {
             CheckOpened(correlationId);
-            var envelop = await _queue.PeekMessageAsync(_cancel.Token);
+            var envelop = await _queue.PeekMessageAsync(null, null, _cancel.Token);
 
             if (envelop == null) return null;
 
@@ -168,7 +168,7 @@ namespace PipServices.Azure.Messaging
         public override async Task<List<MessageEnvelop>> PeekBatchAsync(string correlationId, int messageCount)
         {
             CheckOpened(correlationId);
-            var envelops = await _queue.PeekMessagesAsync(messageCount, _cancel.Token);
+            var envelops = await _queue.PeekMessagesAsync(messageCount, null, null, _cancel.Token);
             var messages = new List<MessageEnvelop>();
 
             foreach (var envelop in envelops)
@@ -244,7 +244,7 @@ namespace PipServices.Azure.Messaging
             var envelop = (CloudQueueMessage)message.Reference;
             if (envelop != null)
             {
-                await _queue.DeleteMessageAsync(envelop, _cancel.Token);
+                await _queue.DeleteMessageAsync(envelop.Id, envelop.PopReceipt, null, null, _cancel.Token);
                 message.Reference = null;
                 _logger.Trace(message.CorrelationId, "Completed message {0} at {1}", message, this);
             }
@@ -263,7 +263,7 @@ namespace PipServices.Azure.Messaging
 
                     var content = JsonConverter.ToJson(message);
                     var envelop2 = new CloudQueueMessage(content);
-                    await _deadQueue.AddMessageAsync(envelop2, _cancel.Token);
+                    await _deadQueue.AddMessageAsync(envelop2, null, null, null, null, _cancel.Token);
                 }
                 else
                 {
@@ -271,7 +271,7 @@ namespace PipServices.Azure.Messaging
                 }
 
                 // Remove the message from the queue
-                await _queue.DeleteMessageAsync(envelop, _cancel.Token);
+                await _queue.DeleteMessageAsync(envelop.Id, envelop.PopReceipt, null, null, _cancel.Token);
                 message.Reference = null;
 
                 _counters.IncrementOne("queue." + Name + ".dead_messages");
@@ -324,7 +324,7 @@ namespace PipServices.Azure.Messaging
         public override async Task ClearAsync(string correlationId)
         {
             CheckOpened(correlationId);
-            await _queue.ClearAsync(_cancel.Token);
+            await _queue.ClearAsync(null, null, _cancel.Token);
 
             _logger.Trace(null, "Cleared queue {0}", this);
         }

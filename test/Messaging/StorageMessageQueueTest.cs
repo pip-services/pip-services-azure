@@ -1,20 +1,20 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PipServices.Commons.Config;
+﻿using PipServices.Commons.Config;
 using PipServices.Commons.Connect;
+
 using System.Threading.Tasks;
+
+using Xunit;
 
 namespace PipServices.Azure.Messaging
 {
-    [TestClass]
     public class StorageMessageQueueTest
     {
         StorageMessageQueue Queue { get; set; }
         MessageQueueFixture Fixture { get; set; }
 
-        [TestInitialize]
-        public void TestInitialize()
+        public StorageMessageQueueTest()
         {
-            var config = YamlConfigReader.ReadConfig(null, "..\\..\\..\\..\\config\\test_connections.yaml");
+            var config = YamlConfigReader.ReadConfig(null, "..\\..\\..\\..\\config\\test_connections.yaml", null);
             var connection = ConnectionParams.FromString(config.GetAsString("storage_queue"));
             Queue = new StorageMessageQueue("TestQueue", connection);
             //Queue.SetReferences(new MockReferences());
@@ -24,69 +24,68 @@ namespace PipServices.Azure.Messaging
             Fixture = new MessageQueueFixture(Queue);
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestStorageSendReceiveMessageAsync()
         {
             await Queue.ClearAsync(null);
             await Fixture.TestSendReceiveMessageAsync();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestStorageReceiveSendMessageAsync()
         {
             await Queue.ClearAsync(null);
             await Fixture.TestReceiveSendMessageAsync();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestStorageReceiveAndCompleteAsync()
         {
             await Queue.ClearAsync(null);
             await Fixture.TestReceiveAndCompleteMessageAsync();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestStorageReceiveAndAbandonAsync()
         {
             await Queue.ClearAsync(null);
             await Fixture.TestReceiveAndAbandonMessageAsync();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestStorageSendPeekMessageAsync()
         {
             await Queue.ClearAsync(null);
             await Fixture.TestSendPeekMessageAsync();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestStoragePeekNoMessageAsync()
         {
             await Queue.ClearAsync(null);
             await Fixture.TestPeekNoMessageAsync();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestStorageOnMessageAsync()
         {
             await Queue.ClearAsync(null);
             await Fixture.TestOnMessageAsync();
         }
 
-        [TestMethod]
+        [Fact]
         public async Task TestStorageMoveToDeadMessageAsync()
         {
             await Fixture.TestMoveToDeadMessageAsync();
         }
 
-        [TestMethod]
-        [TestCategory("Build")]
+        [Fact]
         public async Task TestStorageMessageCountAsync()
         {
             await Fixture.TestMessageCountAsync();
         }
 
-        //[TestMethod]
+        //[Fact]
         //public async Task TestStorageNullMessageAsync()
         //{
         //    var envelop = await Queue.ReceiveAsync(TimeSpan.FromMilliseconds(10000000));

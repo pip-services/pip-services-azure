@@ -35,7 +35,18 @@ namespace PipServices.Azure.Config
             _credentialResolver.Configure(config, true);
         }
 
-        protected override ConfigParams PerformReadConfig(string correlationId)
+        public static ConfigParams ReadConfiguration(string correlationId, ConfigParams config)
+        {
+            return new KeyVaultConfigReader(config).ReadConfig(correlationId, config);
+        }
+
+        public static ConfigParams ReadConfiguration(string correlationId, string connectionString)
+        {
+            var config = ConfigParams.FromString(connectionString);
+            return new KeyVaultConfigReader(config).ReadConfig(correlationId, config);
+        }
+
+        protected override ConfigParams PerformReadConfig(string correlationId, ConfigParams parameters)
         {
             try
             {
@@ -59,17 +70,6 @@ namespace PipServices.Azure.Config
             {
                 throw new ArgumentException("Failed to load config from KeyVault", ex);
             }
-        }
-
-        public static ConfigParams ReadConfig(string correlationId, ConfigParams config)
-        {
-            return new KeyVaultConfigReader(config).ReadConfig(correlationId);
-        }
-
-        public static ConfigParams ReadConfig(string correlationId, string connectionString)
-        {
-            var config = ConfigParams.FromString(connectionString);
-            return new KeyVaultConfigReader(config).ReadConfig(correlationId);
         }
     }
 }

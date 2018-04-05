@@ -3,11 +3,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.ServiceFabric.Services.Runtime;
 using PipServices.Commons.Build;
+using PipServices.Commons.Config;
 using PipServices.Commons.Errors;
+using PipServices.Commons.Info;
 using PipServices.Commons.Log;
 using PipServices.Commons.Refer;
 using PipServices.Commons.Run;
-using PipServices.Container.Info;
 using PipServices.Container.Refer;
 
 namespace PipServices.Azure.Run
@@ -25,7 +26,7 @@ namespace PipServices.Azure.Run
         /// </summary>
         public MicroserviceProcessContainer()
         {
-            References = new ContainerReferences();
+            _references = new ContainerReferences();
         }
 
         private void CaptureErrors()
@@ -35,7 +36,7 @@ namespace PipServices.Azure.Run
 
         private void HandleUncaughtException(object sender, UnhandledExceptionEventArgs args)
         {
-            Logger.Fatal(_correlationId, (Exception)args.ExceptionObject, "Process is terminated");
+            _logger.Fatal(_correlationId, (Exception)args.ExceptionObject, "Process is terminated");
         }
 
         private async Task RunAsync(string correlationId, CancellationToken token)
@@ -46,35 +47,35 @@ namespace PipServices.Azure.Run
 
             //await StartAsync(correlationId, token);
 
-            if (Config == null)
+            if (_config == null)
                 throw new InvalidStateException(correlationId, "NO_CONFIG", "Container was not configured");
 
             try
             {
-                Logger.Trace(correlationId, "Starting container.");
+                _logger.Trace(correlationId, "Starting container.");
 
                 // Create references with configured components
-                InitReferences(References);
-                References.PutFromConfig(Config);
+                InitReferences(_references);
+                _references.PutFromConfig(_config);
 
                 // Reference and open components
-                var components = References.GetAll();
-                Referencer.SetReferences(References, components);
-                await Opener.OpenAsync(correlationId, References.GetAll());
+                var components = _references.GetAll();
+                Referencer.SetReferences(_references, components);
+                await Opener.OpenAsync(correlationId, _references.GetAll());
 
                 // Get reference to logger
-                Logger = new CompositeLogger(References);
+                _logger = new CompositeLogger(_references);
 
                 // Get reference to container info
                 var infoDescriptor = new Descriptor("*", "container-info", "*", "*", "*");
-                Info = (ContainerInfo)References.GetOneRequired(infoDescriptor);
+                _info = (ContextInfo)_references.GetOneRequired(infoDescriptor);
 
-                Logger.Info(correlationId, "Container {0} started.", Info.Name);
+                _logger.Info(correlationId, "Container {0} started.", _info.Name);
             }
             catch (Exception ex)
             {
-                References = null;
-                Logger.Error(correlationId, ex, "Failed to start container");
+                _references = null;
+                _logger.Error(correlationId, ex, "Failed to start container");
 
                 throw;
             }
@@ -85,9 +86,9 @@ namespace PipServices.Azure.Run
         /// </summary>
         /// <param name="token">The token.</param>
         /// <returns>Task.</returns>
-        public async Task StopAsync(CancellationToken token)
+        public async Task StopAsync()
         {
-            await StopAsync(_correlationId, token);
+            await CloseAsync(_correlationId);
         }
 
 
@@ -98,9 +99,9 @@ namespace PipServices.Azure.Run
         /// <param name="path">The path.</param>
         /// <param name="token">The token.</param>
         /// <returns>Task.</returns>
-        public Task RunWithConfigFileAsync(string correlationId, string path, CancellationToken token)
+        public Task RunWithConfigFileAsync(string correlationId, string path, ConfigParams parameters, CancellationToken token)
         {
-            ReadConfigFromFile(correlationId, path);
+            ReadConfigFromFile(correlationId, path, parameters);
             return RunAsync(correlationId, token);
         }
 
@@ -114,7 +115,7 @@ namespace PipServices.Azure.Run
             if ( !typeof(StatelessService).IsAssignableFrom(typeof(T)) && !typeof(StatefulService).IsAssignableFrom(typeof(T)))
                 throw new ArgumentException("Service should be derived from either StatelessService or StatefulService", nameof(T));
 
-            return References.GetOneRequired<T>(new Descriptor("*", "service", "azure-stateless", "*", "*"));
+            return _references.GetOneRequired<T>(new Descriptor("*", "service", "azure-stateless", "*", "*"));
         }
     }
 }
