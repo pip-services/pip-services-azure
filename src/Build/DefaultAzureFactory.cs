@@ -9,14 +9,14 @@ namespace PipServices.Azure.Build
 {
     public class DefaultAzureFactory : Factory
     {
-        public static Descriptor Descriptor = new Descriptor("pip-services-azure", "factory", "default", "default", "1.0");
+        public static Descriptor Descriptor = new Descriptor("pip-services", "factory", "azure", "default", "1.0");
 
-        public static Descriptor StorageMessageQueueDescriptor = new Descriptor("pip-services-azure", "messaging", "storage-message-queue", "default", "1.0");
-        public static Descriptor ServiceBusMessageQueueDescriptor = new Descriptor("pip-services-azure", "messaging", "servicebus-message-queue", "*", "1.0");
-        public static Descriptor ServiceBusMessageTopicDescriptor = new Descriptor("pip-services-azure", "messaging", "servicebus-message-topic", "*", "1.0");
-        public static Descriptor KeyVaultConfigReaderDescriptor = new Descriptor("pip-services-azure", "config-reader", "key-vault", "*", "1.0");
-        public static Descriptor AppInsightsCountersDescriptor = new Descriptor("pip-services-azure", "counters", "app-insights", "*", "1.0");
-        public static Descriptor AppInsightsLoggerDescriptor = new Descriptor("pip-services-azure", "logger", "app-insights", "*", "1.0");
+        public static Descriptor StorageMessageQueueDescriptor = new Descriptor("pip-services", "message-queue", "storage-message-queue", "default", "1.0");
+        public static Descriptor ServiceBusMessageQueueDescriptor = new Descriptor("pip-services", "message-queue", "servicebus-message-queue", "*", "1.0");
+        public static Descriptor ServiceBusMessageTopicDescriptor = new Descriptor("pip-services", "message-queue", "servicebus-message-topic", "*", "1.0");
+        public static Descriptor KeyVaultConfigReaderDescriptor = new Descriptor("pip-services", "config-reader", "key-vault", "*", "1.0");
+        public static Descriptor AppInsightsCountersDescriptor = new Descriptor("pip-services", "counters", "app-insights", "*", "1.0");
+        public static Descriptor AppInsightsLoggerDescriptor = new Descriptor("pip-services", "logger", "app-insights", "*", "1.0");
 
         public DefaultAzureFactory()
         {
