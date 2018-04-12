@@ -1,5 +1,4 @@
-﻿using Microsoft.ServiceBus;
-using Microsoft.ServiceBus.Messaging;
+﻿using Microsoft.Azure.ServiceBus;
 using PipServices.Commons.Auth;
 using PipServices.Commons.Config;
 using PipServices.Commons.Connect;
@@ -13,6 +12,9 @@ using System.Threading.Tasks;
 
 namespace PipServices.Azure.Messaging
 {
+    // ServiceBusMessageTopic is not ready for .net core 2.0, see  https://github.com/Azure/azure-service-bus-dotnet/issues/65
+
+    /*
     // This implementation doesn't use subscriptions. Don't use it unless you know what you are doing!
     public class ServiceBusMessageTopic2 : MessageQueue
     {
@@ -297,4 +299,5 @@ namespace PipServices.Azure.Messaging
         }
 
     }
+    */
 }

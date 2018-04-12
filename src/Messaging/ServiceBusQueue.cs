@@ -1,5 +1,4 @@
-﻿using Microsoft.ServiceBus;
-using Microsoft.ServiceBus.Messaging;
+﻿using Microsoft.Azure.ServiceBus;
 using PipServices.Commons.Auth;
 using PipServices.Commons.Config;
 using PipServices.Commons.Connect;
@@ -12,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace PipServices.Azure.Messaging
 {
+    // ServiceBusMessageQueue is not ready for .net core 2.0, see  https://github.com/Azure/azure-service-bus-dotnet/issues/65
+    /*
     public class ServiceBusMessageQueue : MessageQueue
     {
         private string _queueName;
@@ -284,4 +285,5 @@ namespace PipServices.Azure.Messaging
             _logger.Trace(correlationId, "Cleared queue {0}", this);
         }
     }
+    */
 }

@@ -7,6 +7,7 @@ using Xunit;
 
 namespace PipServices.Azure.Messaging
 {
+    /*
     public class ServiceBusMessageTopicTest
     {
         ServiceBusMessageTopic Topic { get; set; }
@@ -82,4 +83,5 @@ namespace PipServices.Azure.Messaging
             await Fixture.TestMessageCountAsync();
         }
     }
+    */
 }
