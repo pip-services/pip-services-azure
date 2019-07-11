@@ -1,19 +1,23 @@
-﻿using PipServices.Commons.Data;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+
+using PipServices.Commons.Config;
+using PipServices.Commons.Data;
 using PipServices.Oss.MongoDb;
 
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-
-using MongoDB.Bson;
-using MongoDB.Driver;
 
 namespace PipServices.Azure.Persistence
 {
-    public class CosmosMongoDbPartitionPersistence<T, K> : IdentifiableMongoDbPersistence<T, K>
+    public abstract class CosmosMongoDbPartitionPersistence<T, K> : IdentifiableMongoDbPersistence<T, K>
         where T : IIdentifiable<K>
         where K : class
     {
-        private string _partitionKey;
+        protected string _partitionKey;
+        protected bool _cosmosDbApiEnabled = true;
+        protected ICosmosDbRestClient _cosmosDbRestClient;
 
         public CosmosMongoDbPartitionPersistence(string collectionName, string partitionKey)
             : base(collectionName)
@@ -21,21 +25,36 @@ namespace PipServices.Azure.Persistence
             _partitionKey = partitionKey;
         }
 
+        protected abstract string GetPartitionKey(K id);
+        protected abstract int GetThroughput();
+        protected abstract List<string> GetIndexes();
+
+        public override void Configure(ConfigParams config)
+        {
+            base.Configure(config);
+
+            _cosmosDbApiEnabled = config.GetAsBooleanWithDefault("cosmosdb_api_enabled", true);
+        }
+
         public override async Task OpenAsync(string correlationId)
         {
             await base.OpenAsync(correlationId);
 
-            if (!await CollectionExistsAsync())
+            if (!_cosmosDbApiEnabled)
+            {
+                _logger.Warn(correlationId, $"OpenAsync: Using CosmosDB API is disabled.");
+                return;
+            }
+
+            InitializeCosmosDbRestClient();
+
+            if (!await CollectionExistsAsync(correlationId))
             {
                 await CreatePartitionCollectionAsync(correlationId);
             }
-            else
-            {
-                _logger.Warn(correlationId, $"OpenAsync: Skip to create partition collection.");
-            }
         }
 
-        public new async Task<T> DeleteByIdAsync(string correlationId, K id)
+        public override async Task<T> DeleteByIdAsync(string correlationId, K id)
         {
             var builder = Builders<T>.Filter;
             var filter = builder.Empty;
@@ -52,7 +71,7 @@ namespace PipServices.Azure.Persistence
             return result;
         }
 
-        public new async Task<T> ModifyByIdAsync(string correlationId, K id, UpdateDefinition<T> updateDefinition)
+        public override async Task<T> ModifyByIdAsync(string correlationId, K id, UpdateDefinition<T> updateDefinition)
         {
             if (id == null || updateDefinition == null)
             {
@@ -73,7 +92,7 @@ namespace PipServices.Azure.Persistence
             return result;
         }
 
-        public new async Task<T> UpdateAsync(string correlationId, T item)
+        public override async Task<T> UpdateAsync(string correlationId, T item)
         {
             var identifiable = item as IIdentifiable<K>;
             if (identifiable == null || item.Id == null)
@@ -100,6 +119,33 @@ namespace PipServices.Azure.Persistence
             return result;
         }
 
+        public override async Task<T> SetAsync(string correlationId, T item)
+        {
+            var identifiable = item as IIdentifiable<K>;
+            if (identifiable == null || item.Id == null)
+            {
+                return default(T);
+            }
+
+            var builder = Builders<T>.Filter;
+            var filter = builder.Empty;
+            var key = GetPartitionKey(identifiable.Id);
+
+            filter &= builder.Eq(x => x.Id, identifiable.Id);
+            filter &= builder.Eq(_partitionKey, key);
+
+            var options = new FindOneAndReplaceOptions<T>
+            {
+                ReturnDocument = ReturnDocument.After,
+                IsUpsert = true
+            };
+            var result = await _collection.FindOneAndReplaceAsync(filter, item, options);
+
+            _logger.Trace(correlationId, $"Set in {_collectionName} with id = {identifiable.Id} and {_partitionKey} = {key}");
+
+            return result;
+        }
+
         public async Task<T> GetOneByFilterAsync(string correlationId, FilterDefinition<T> filter)
         {
             var result = await _collection.Find(filter).FirstOrDefaultAsync();
@@ -115,38 +161,59 @@ namespace PipServices.Azure.Persistence
             return result;
         }
 
+        protected virtual void InitializeCosmosDbRestClient()
+        {
+            _cosmosDbRestClient = new CosmosDbRestClient()
+            {
+                MongoClient = _connection,
+                CollectionName = _collectionName,
+                PartitionKey = _partitionKey,
+                Logger = _logger
+            };
+        }
+
         protected virtual async Task CreatePartitionCollectionAsync(string correlationId)
         {
             try
             {
                 // Specific CosmosDB command that creates partition collection (it raises exception for MongoDB)
                 await _database.RunCommandAsync(new BsonDocumentCommand<BsonDocument>(new BsonDocument
-                {
-                    {"shardCollection", $"{_database.DatabaseNamespace.DatabaseName}.{_collectionName}"},
-                    {"key", new BsonDocument {{ _partitionKey, "hashed"}}}
-                }));
+                    {
+                        {"shardCollection", $"{_database.DatabaseNamespace.DatabaseName}.{_collectionName}"},
+                        {"key", new BsonDocument {{ _partitionKey, "hashed"}}}
+                    }));
+
+                _logger.Info(correlationId, $"CreatePartitionCollectionAsync: Created partition collection '{_collectionName}'.");
             }
             catch (Exception exception)
             {
                 _logger.Error(correlationId, exception, $"CreatePartitionCollectionAsync: Failed to create partition collection.");
             }
 
+            try
+            {
+                var indexModels = new List<CreateIndexModel<T>>();
+
+                foreach (var index in GetIndexes())
+                {
+                    indexModels.Add(new CreateIndexModel<T>(Builders<T>.IndexKeys.Hashed(index)));
+                }
+
+                await _collection.Indexes.CreateManyAsync(indexModels).ConfigureAwait(false);
+
+                _logger.Info(correlationId, $"CreatePartitionCollectionAsync: Created indexes for collection '{_collectionName}'.");
+            }
+            catch (Exception exception)
+            {
+                _logger.Error(correlationId, exception, $"CreatePartitionCollectionAsync: Failed to create indexes for collection '{_collectionName}'.");
+            }
+
             _collection = _database.GetCollection<T>(_collectionName);
         }
 
-        protected virtual string GetPartitionKey(K id)
+        protected virtual async Task<bool> CollectionExistsAsync(string correlationId)
         {
-            return string.Empty;
-        }
-
-        protected virtual async Task<bool> CollectionExistsAsync()
-        {
-            var collections = await _database.ListCollectionsAsync(new ListCollectionsOptions
-            {
-                Filter = new BsonDocument("name", _collectionName)
-            });
-
-            return await collections.AnyAsync();
+            return await _cosmosDbRestClient.CollectionExistsAsync(correlationId);
         }
 
         protected virtual async Task<U> ExecuteWithRetriesAsync<U>(string correlationId, Func<Task<U>> invokeFunc, int maxRetries = 3)
@@ -177,4 +244,5 @@ namespace PipServices.Azure.Persistence
             return await Task.FromResult(default(U));
         }
     }
+
 }
