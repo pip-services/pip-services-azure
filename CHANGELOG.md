@@ -1,7 +1,8 @@
 # Azure components for Pip.Services in .NET Changelog
 
-## <a name="2.2.0-2.2.5"></a> 2.2.0-2.2.5 (2019-07-11)
+## <a name="2.2.0-2.2.6"></a> 2.2.0-2.2.6 (2019-07-29)
 * **persistence** CosmosDB MongoDB partition persistence
+* **lock** Cloud table storage lock
 
 ### Features
 * Migrated to .NET Standard 2.0

@@ -26,11 +26,18 @@ namespace PipServices.Azure.Persistence
         private string BaseUri => $"https://{MongoClient?.Settings?.Server?.Host}";
         private string MasterKey => MongoClient?.Settings?.Credential?.Password;
 
+        public HttpClient _httpClient { get; set; }
+
+        public CosmosDbRestClient()
+        {
+            _httpClient = new HttpClient();
+        }
+
         public async Task<bool> CollectionExistsAsync(string correlationId)
         {
             try
             {
-                using (var client = CreateHttpClientWithHeader("GET", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}"))
+                var client = UpdateHttpClientWithHeader("GET", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}");
                 {
                     var uri = new Uri($"{BaseUri}/dbs/{DatabaseName}/colls/{CollectionName}");
                     var response = await client.GetAsync(uri);
@@ -63,7 +70,7 @@ namespace PipServices.Azure.Persistence
         {
             try
             {
-                using (var client = CreateHttpClientWithHeader("POST", "colls", $"dbs/{DatabaseName}"))
+                var client = UpdateHttpClientWithHeader("POST", "colls", $"dbs/{DatabaseName}");
                 {
                     client.DefaultRequestHeaders.Add("x-ms-offer-throughput", throughput.ToString());
 
@@ -95,7 +102,7 @@ namespace PipServices.Azure.Persistence
                 // 1. Get collection
                 CollectionEntity collectionEntity = null;
 
-                using (var client = CreateHttpClientWithHeader("GET", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}"))
+                var client = UpdateHttpClientWithHeader("GET", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}");
                 {
                     var uri = new Uri($"{BaseUri}/dbs/{DatabaseName}/colls/{CollectionName}");
                     var response = await client.GetAsync(uri);
@@ -118,7 +125,7 @@ namespace PipServices.Azure.Persistence
 
                 // 2. Retrieve offer of collection (throughput)
                 OfferEntity offerEntity = null;
-                using (var client = CreateHttpClientWithHeader("POST", "offers", ""))
+                client = UpdateHttpClientWithHeader("POST", "offers", "");
                 {
                     client.DefaultRequestHeaders.Add("x-ms-documentdb-isquery", "True");
 
@@ -146,7 +153,7 @@ namespace PipServices.Azure.Persistence
 
                 // 3. Update offer (new throughput)
                 offerEntity.Content.OfferThroughput = throughput;
-                using (var client = CreateHttpClientWithHeader("PUT", "offers", $"{offerEntity.Id.ToLower()}"))
+                client = UpdateHttpClientWithHeader("PUT", "offers", $"{offerEntity.Id.ToLower()}");
                 {
                     var uri = new Uri($"{BaseUri}/offers/{offerEntity.Id.ToLower()}");
                     var response = await client.PutAsJsonAsync(uri, offerEntity);
@@ -165,7 +172,7 @@ namespace PipServices.Azure.Persistence
             }
             catch (Exception exception)
             {
-                Logger.Error(correlationId, exception, $"UpdateThroughputAsync: Failed to update throughput of the collection '{CollectionName}' in the CosmosDB database '{DatabaseName}'.");
+                Logger.Error(correlationId, exception, $"UpdateThroughputAsync: Failed to update throughput to '{throughput}' of the collection '{CollectionName}' in the CosmosDB database '{DatabaseName}'.");
                 return await Task.FromResult(false);
             }
 
@@ -179,7 +186,7 @@ namespace PipServices.Azure.Persistence
                 // 1. Get collection
                 CollectionEntity collectionEntity = null;
 
-                using (var client = CreateHttpClientWithHeader("GET", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}"))
+                var client = UpdateHttpClientWithHeader("GET", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}");
                 {
                     var uri = new Uri($"{BaseUri}/dbs/{DatabaseName}/colls/{CollectionName}");
                     var response = await client.GetAsync(uri);
@@ -201,7 +208,7 @@ namespace PipServices.Azure.Persistence
                 }
 
                 // 2. Update collection
-                using (var client = CreateHttpClientWithHeader("PUT", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}"))
+                client = UpdateHttpClientWithHeader("PUT", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}");
                 {
                     var uri = new Uri($"{BaseUri}/dbs/{DatabaseName}/colls/{CollectionName}");
                     var response = await client.PutAsJsonAsync(uri, CreateCollectionEntity(collectionEntity, indexes));
@@ -366,21 +373,19 @@ namespace PipServices.Azure.Persistence
             return result;
         }
 
-        private HttpClient CreateHttpClientWithHeader(string verb, string resourceType, string resourceId)
+        private HttpClient UpdateHttpClientWithHeader(string verb, string resourceType, string resourceId)
         {
-            var client = new HttpClient();
-
             var utcNow = DateTime.UtcNow.ToString("r");
 
-            client.DefaultRequestHeaders.Add("x-ms-date", utcNow);
-            client.DefaultRequestHeaders.Add("x-ms-version", "2015-12-16");
+            _httpClient.DefaultRequestHeaders.Add("x-ms-date", utcNow);
+            _httpClient.DefaultRequestHeaders.Add("x-ms-version", "2015-12-16");
 
             var authHeader = CosmosDbAuthHelper.GenerateMasterKeyAuthorizationSignature(verb, resourceId, resourceType, MasterKey, "master", "1.0", utcNow);
 
-            client.DefaultRequestHeaders.Remove("authorization");
-            client.DefaultRequestHeaders.Add("authorization", authHeader);
+            _httpClient.DefaultRequestHeaders.Remove("authorization");
+            _httpClient.DefaultRequestHeaders.Add("authorization", authHeader);
 
-            return client;
+            return _httpClient;
         }
 
         #endregion
