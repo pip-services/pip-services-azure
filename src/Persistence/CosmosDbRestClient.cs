@@ -377,12 +377,12 @@ namespace PipServices.Azure.Persistence
         {
             var utcNow = DateTime.UtcNow.ToString("r");
 
+            _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Add("x-ms-date", utcNow);
             _httpClient.DefaultRequestHeaders.Add("x-ms-version", "2015-12-16");
 
             var authHeader = CosmosDbAuthHelper.GenerateMasterKeyAuthorizationSignature(verb, resourceId, resourceType, MasterKey, "master", "1.0", utcNow);
 
-            _httpClient.DefaultRequestHeaders.Remove("authorization");
             _httpClient.DefaultRequestHeaders.Add("authorization", authHeader);
 
             return _httpClient;
