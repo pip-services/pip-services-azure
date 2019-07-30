@@ -4,6 +4,8 @@ using PipServices.Azure.Messaging;
 using PipServices.Azure.Config;
 using PipServices.Azure.Count;
 using PipServices.Azure.Log;
+using PipServices.Azure.Lock;
+using PipServices.Azure.Metrics;
 
 namespace PipServices.Azure.Build
 {
@@ -18,6 +20,8 @@ namespace PipServices.Azure.Build
         public static Descriptor KeyVaultConfigReaderDescriptor = new Descriptor("pip-services", "config-reader", "key-vault", "*", "1.0");
         public static Descriptor AppInsightsCountersDescriptor = new Descriptor("pip-services", "counters", "app-insights", "*", "1.0");
         public static Descriptor AppInsightsLoggerDescriptor = new Descriptor("pip-services", "logger", "app-insights", "*", "1.0");
+        public static Descriptor CloudStorageTableLockDescriptor = new Descriptor("pip-services", "lock", "storage-table", "*", "1.0");
+        public static Descriptor CosmosDbMetricsServiceDescriptor = new Descriptor("pip-services", "metrics-service", "cosmosdb", "*", "1.0");
 
         public DefaultAzureFactory()
         {
@@ -28,6 +32,8 @@ namespace PipServices.Azure.Build
             RegisterAsType(KeyVaultConfigReaderDescriptor, typeof(KeyVaultConfigReader));
             RegisterAsType(AppInsightsCountersDescriptor, typeof(AppInsightsCounters));
             RegisterAsType(AppInsightsLoggerDescriptor, typeof(AppInsightsLogger));
+            RegisterAsType(CloudStorageTableLockDescriptor, typeof(CloudStorageTableLock));
+            RegisterAsType(CosmosDbMetricsServiceDescriptor, typeof(CosmosDbMetricsService));
         }
     }
 }

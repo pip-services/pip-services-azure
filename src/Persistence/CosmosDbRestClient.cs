@@ -45,12 +45,12 @@ namespace PipServices.Azure.Persistence
 
                     if (response.IsSuccessStatusCode)
                     {
-                        Logger.Info(correlationId, $"CollectionExistsAsync: Collection '{CollectionName}' exists.");
+                        Logger.Trace(correlationId, $"CollectionExistsAsync: Collection '{CollectionName}' exists.");
                         return await Task.FromResult(true);
                     }
                     else if (response.StatusCode == HttpStatusCode.NotFound)
                     {
-                        Logger.Info(correlationId, $"CollectionExistsAsync: Collection '{CollectionName}' doesn't exist.");
+                        Logger.Trace(correlationId, $"CollectionExistsAsync: Collection '{CollectionName}' doesn't exist.");
                         return await Task.FromResult(false);
                     }
                     else
@@ -80,7 +80,7 @@ namespace PipServices.Azure.Persistence
 
                     if (response.IsSuccessStatusCode)
                     {
-                        Logger.Info(correlationId, $"CreatePartitionCollectionAsync: Collection '{CollectionName}' created.");
+                        Logger.Trace(correlationId, $"CreatePartitionCollectionAsync: Collection '{CollectionName}' created.");
                     }
                     else
                     {
@@ -95,8 +95,9 @@ namespace PipServices.Azure.Persistence
             }
         }
 
-        public async Task<bool> UpdateThroughputAsync(string correlationId, int throughput)
+        public async Task<int> GetThroughputAsync(string correlationId)
         {
+            var result = 0;
             try
             {
                 // 1. Get collection
@@ -115,7 +116,7 @@ namespace PipServices.Azure.Persistence
                         {
                             throw new NotFoundException(correlationId, "NotFound", $"Unable to find collection '{CollectionName}'. Response Content: {responseContent}");
                         }
-                        Logger.Info(correlationId, $"UpdateThroughputAsync: Found collection '{CollectionName}'.");
+                        Logger.Trace(correlationId, $"GetThroughputAsync: Found collection '{CollectionName}'.");
                     }
                     else
                     {
@@ -138,12 +139,79 @@ namespace PipServices.Azure.Persistence
                     {
                         var searchOffersEntity = JsonConverter.FromJson<SearchOffersEntity>(responseContent);
                         offerEntity = searchOffersEntity?.Offers?.FirstOrDefault();
-                        if (offerEntity == null)
+                        if (offerEntity == null || offerEntity.Content == null)
                         {
                             throw new NotFoundException(correlationId, "NotFound", $"Unable to find offer of collection '{CollectionName}'. Response Content: {responseContent}");
                         }
 
-                        Logger.Info(correlationId, $"UpdateThroughputAsync: The current throughput of collection '{CollectionName}' is: '{offerEntity?.Content?.OfferThroughput}'.");
+                        result = offerEntity.Content.OfferThroughput;
+
+                        Logger.Trace(correlationId, $"GetThroughputAsync: The current throughput of collection '{CollectionName}' is: '{result}'.");
+                    }
+                    else
+                    {
+                        throw new ConnectionException(correlationId, "ConnectFailed", $"Error while getting offer of collection '{CollectionName}'. Response Content: {responseContent}");
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                Logger.Error(correlationId, exception, $"GetThroughputAsync: Failed to get throughput of the collection '{CollectionName}' in the CosmosDB database '{DatabaseName}'.");
+                return await Task.FromResult(result);
+            }
+
+            return await Task.FromResult(result);
+        }
+
+        public async Task<bool> UpdateThroughputAsync(string correlationId, int throughput)
+        {
+            try
+            {
+                // 1. Get collection
+                CollectionEntity collectionEntity = null;
+
+                var client = UpdateHttpClientWithHeader("GET", "colls", $"dbs/{DatabaseName}/colls/{CollectionName}");
+                {
+                    var uri = new Uri($"{BaseUri}/dbs/{DatabaseName}/colls/{CollectionName}");
+                    var response = await client.GetAsync(uri);
+                    var responseContent = await response.Content.ReadAsStringAsync();
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        collectionEntity = JsonConverter.FromJson<CollectionEntity>(responseContent);
+                        if (collectionEntity == null)
+                        {
+                            throw new NotFoundException(correlationId, "NotFound", $"Unable to find collection '{CollectionName}'. Response Content: {responseContent}");
+                        }
+                        Logger.Trace(correlationId, $"UpdateThroughputAsync: Found collection '{CollectionName}'.");
+                    }
+                    else
+                    {
+                        throw new ConnectionException(correlationId, "ConnectFailed", $"Error while getting info about collection '{CollectionName}'. Response Content: {responseContent}");
+                    }
+                }
+
+                // 2. Retrieve offer of collection (throughput)
+                OfferEntity offerEntity = null;
+                client = UpdateHttpClientWithHeader("POST", "offers", "");
+                {
+                    client.DefaultRequestHeaders.Add("x-ms-documentdb-isquery", "True");
+
+                    var uri = new Uri($"{BaseUri}/offers");
+                    var value = new { query = $"SELECT * FROM root WHERE (root[\"offerResourceId\"] = \"{collectionEntity.ResourceId}\")" };
+                    var response = await client.PostAsync(uri, value, new NoCharSetJsonMediaTypeFormatter());
+                    var responseContent = await response.Content.ReadAsStringAsync();
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var searchOffersEntity = JsonConverter.FromJson<SearchOffersEntity>(responseContent);
+                        offerEntity = searchOffersEntity?.Offers?.FirstOrDefault();
+                        if (offerEntity == null || offerEntity.Content == null)
+                        {
+                            throw new NotFoundException(correlationId, "NotFound", $"Unable to find offer of collection '{CollectionName}'. Response Content: {responseContent}");
+                        }
+
+                        Logger.Trace(correlationId, $"UpdateThroughputAsync: The current throughput of collection '{CollectionName}' is: '{offerEntity?.Content?.OfferThroughput}'.");
                     }
                     else
                     {
@@ -162,7 +230,7 @@ namespace PipServices.Azure.Persistence
                     if (response.IsSuccessStatusCode)
                     {
                         var resultOfferEntity = JsonConverter.FromJson<OfferEntity>(responseContent);
-                        Logger.Info(correlationId, $"UpdateThroughputAsync: The updated throughput of collection '{CollectionName}' is: '{resultOfferEntity?.Content?.OfferThroughput}'.");
+                        Logger.Trace(correlationId, $"UpdateThroughputAsync: The updated throughput of collection '{CollectionName}' is: '{resultOfferEntity?.Content?.OfferThroughput}'.");
                     }
                     else
                     {
@@ -199,7 +267,7 @@ namespace PipServices.Azure.Persistence
                         {
                             throw new NotFoundException(correlationId, "NotFound", $"Unable to find collection '{CollectionName}'. Response Content: {responseContent}");
                         }
-                        Logger.Info(correlationId, $"UpdatePartitionCollectionAsync: Found collection '{CollectionName}'.");
+                        Logger.Trace(correlationId, $"UpdatePartitionCollectionAsync: Found collection '{CollectionName}'.");
                     }
                     else
                     {
@@ -216,7 +284,7 @@ namespace PipServices.Azure.Persistence
 
                     if (response.IsSuccessStatusCode)
                     {
-                        Logger.Info(correlationId, $"UpdatePartitionCollectionAsync: Collection '{CollectionName}' updated.");
+                        Logger.Trace(correlationId, $"UpdatePartitionCollectionAsync: Collection '{CollectionName}' updated.");
                     }
                     else
                     {

@@ -51,7 +51,7 @@ namespace PipServices.Azure.Lock
                 _table = _client.GetTableReference(tableName.ToString());
                 _table.CreateIfNotExistsAsync().Wait();
 
-                _logger.Info("CloudStorageTableLock", $"Connected to lock storage table '{tableName}'.");
+                _logger.Trace("CloudStorageTableLock", $"Connected to lock storage table '{tableName}'.");
             }
             catch (Exception exception)
             {
@@ -78,11 +78,11 @@ namespace PipServices.Azure.Lock
                 {
                     if (tableLock.Expired > DateTime.UtcNow)
                     {
-                        _logger.Info(correlationId, $"TryAcquireLock: Key = '{key}' has been already locked and not expired.");
+                        _logger.Trace(correlationId, $"TryAcquireLock: Key = '{key}' has been already locked and not expired.");
                         return false;
                     }
 
-                    _logger.Info(correlationId, $"TryAcquireLock: Locked key = '{key}' expired.");
+                    _logger.Trace(correlationId, $"TryAcquireLock: Locked key = '{key}' expired.");
                 }
 
                 var lockRecord = new TableLock(correlationId, key, timeToLive);
@@ -90,7 +90,7 @@ namespace PipServices.Azure.Lock
                 var insertOrReplaceOperation = TableOperation.InsertOrReplace(lockRecord);
                 _table.ExecuteAsync(insertOrReplaceOperation).Wait();
 
-                _logger.Info(correlationId, $"TryAcquireLock: Set Key = '{key}' to 'lock' state; it will be expired at {lockRecord.Expired.ToString()} UTC.");
+                _logger.Trace(correlationId, $"TryAcquireLock: Set Key = '{key}' to 'lock' state; it will be expired at {lockRecord.Expired.ToString()} UTC.");
                 return true;
             }
             catch (Exception exception)
@@ -119,7 +119,7 @@ namespace PipServices.Azure.Lock
                     try
                     {
                         _table.ExecuteAsync(operation).Wait();
-                        _logger.Info(correlationId, $"ReleaseLock: Key = '{key}' is released from 'lock' state.");
+                        _logger.Trace(correlationId, $"ReleaseLock: Key = '{key}' is released from 'lock' state.");
                     }
                     catch (Exception exception)
                     {
