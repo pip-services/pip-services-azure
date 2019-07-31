@@ -52,6 +52,7 @@ namespace PipServices.Azure.Metrics
                 return await Task.FromResult(LatestAuthenticationResult.AccessToken);
             }
 
+            LoggerCallbackHandler.UseDefaultLogging = false;
             var authenticationContext = new AuthenticationContext($"https://login.windows.net/{_tenantId}");
             var credential = new ClientCredential(_clientId, _clientSecret);
 

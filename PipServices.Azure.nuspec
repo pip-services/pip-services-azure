@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>PipServices.Azure</id>
-    <version>2.2.8</version>
+    <version>2.2.9</version>
     <title>PipServices.Azure</title>
     <authors>Sergey Seroukhov, Volodymyr Tkachenko</authors>
 
