@@ -1,8 +1,10 @@
 ﻿using Microsoft.Azure.Documents;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 
 using PipServices.Commons.Config;
+using PipServices.Commons.Convert;
 using PipServices.Commons.Data;
 using PipServices.Oss.MongoDb;
 
@@ -54,14 +56,54 @@ namespace PipServices.Azure.Persistence
             }
         }
 
+        public override async Task<T> GetOneByIdAsync(string correlationId, K id)
+        {
+            var key = string.Empty;
+            var filter = ComposePartitionFilter(id, out key);
+
+            var result = await _collection.Find(filter).FirstOrDefaultAsync();
+
+            if (result == null)
+            {
+                _logger.Trace(correlationId, $"Nothing found from {_collectionName} with id = '{id}' and {_partitionKey} = '{key}'.");
+                return await Task.FromResult(default(T));
+            }
+
+            _logger.Trace(correlationId, $"Retrieved from {_collectionName} with id = '{id}' and {_partitionKey} = '{key}'.");
+            return result;
+        }
+
+        public override async Task<object> GetOneByIdAsync(string correlationId, K id, ProjectionParams projection)
+        {
+            var key = string.Empty;
+            var filter = ComposePartitionFilter(id, out key);
+
+            var projectionBuilder = Builders<T>.Projection;
+            var projectionDefinition = CreateProjectionDefinition(projection, projectionBuilder);
+
+            var result = await _collection.Find(filter).Project(projectionDefinition).FirstOrDefaultAsync();
+
+            if (result == null)
+            {
+                _logger.Trace(correlationId, $"Nothing found from {_collectionName} with id = '{id}' and {_partitionKey} = '{key}' and projection fields = '{StringConverter.ToString(projection)}'.");
+                return null;
+            }
+
+            if (result.ElementCount == 0)
+            {
+                _logger.Trace(correlationId, $"Retrieved from {_collectionName} with id = '{id}' and {_partitionKey} = '{key}', but projection = '{StringConverter.ToString(projection)}' is not valid.");
+                return null;
+            }
+
+            _logger.Trace(correlationId, $"Retrieved from {_collectionName} with id = '{id}' and {_partitionKey} = '{key}' and projection fields = '{StringConverter.ToString(projection)}'.");
+
+            return BsonSerializer.Deserialize<object>(result);
+        }
+
         public override async Task<T> DeleteByIdAsync(string correlationId, K id)
         {
-            var builder = Builders<T>.Filter;
-            var filter = builder.Empty;
-            var key = GetPartitionKey(id);
-
-            filter &= builder.Eq(x => x.Id, id);
-            filter &= builder.Eq(_partitionKey, key);
+            var key = string.Empty;
+            var filter = ComposePartitionFilter(id, out key);
 
             var options = new FindOneAndDeleteOptions<T>();
             var result = await _collection.FindOneAndDeleteAsync(filter, options);
@@ -78,12 +120,8 @@ namespace PipServices.Azure.Persistence
                 return default(T);
             }
 
-            var builder = Builders<T>.Filter;
-            var filter = builder.Empty;
-            var key = GetPartitionKey(id);
-
-            filter &= builder.Eq(x => x.Id, id);
-            filter &= builder.Eq(_partitionKey, key);
+            var key = string.Empty;
+            var filter = ComposePartitionFilter(id, out key);
 
             var result = await ModifyAsync(correlationId, filter, updateDefinition);
 
@@ -100,12 +138,8 @@ namespace PipServices.Azure.Persistence
                 return default(T);
             }
 
-            var builder = Builders<T>.Filter;
-            var filter = builder.Empty;
-            var key = GetPartitionKey(identifiable.Id);
-
-            filter &= builder.Eq(x => x.Id, identifiable.Id);
-            filter &= builder.Eq(_partitionKey, key);
+            var key = string.Empty;
+            var filter = ComposePartitionFilter(identifiable.Id, out key);
 
             var options = new FindOneAndReplaceOptions<T>
             {
@@ -127,12 +161,8 @@ namespace PipServices.Azure.Persistence
                 return default(T);
             }
 
-            var builder = Builders<T>.Filter;
-            var filter = builder.Empty;
-            var key = GetPartitionKey(identifiable.Id);
-
-            filter &= builder.Eq(x => x.Id, identifiable.Id);
-            filter &= builder.Eq(_partitionKey, key);
+            var key = string.Empty;
+            var filter = ComposePartitionFilter(identifiable.Id, out key);
 
             var options = new FindOneAndReplaceOptions<T>
             {
@@ -271,6 +301,18 @@ namespace PipServices.Azure.Persistence
             }
 
             return await Task.FromResult(default(U));
+        }
+
+        protected virtual FilterDefinition<T> ComposePartitionFilter(K id, out string key)
+        {
+            key = GetPartitionKey(id);
+
+            var builder = Builders<T>.Filter;
+            var filter = builder.Empty;
+
+            filter &= builder.Eq(x => x.Id, id);
+            filter &= builder.Eq(_partitionKey, key);
+            return filter;
         }
     }
 
