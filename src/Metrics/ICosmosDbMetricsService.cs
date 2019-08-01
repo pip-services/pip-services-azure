@@ -1,4 +1,4 @@
-﻿using PipServices.Azure.Persistence.Data;
+﻿using PipServices.Azure.Metrics.Data;
 
 using System;
 using System.Collections.Generic;

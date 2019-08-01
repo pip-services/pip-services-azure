@@ -1,4 +1,4 @@
-﻿namespace PipServices.Azure.Persistence.Data
+﻿namespace PipServices.Azure.Metrics.Data
 {
     public enum Unit
     {

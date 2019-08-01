@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Microsoft.Azure.Documents;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 using PipServices.Commons.Config;
@@ -26,7 +27,6 @@ namespace PipServices.Azure.Persistence
         }
 
         protected abstract string GetPartitionKey(K id);
-        protected abstract int GetThroughput();
         protected abstract List<string> GetIndexes();
 
         public override void Configure(ConfigParams config)
@@ -234,6 +234,35 @@ namespace PipServices.Azure.Persistence
                     }
 
                     await Task.Delay(1000);
+                }
+                catch (DocumentClientException documentClientException)
+                {
+                    _logger.Error(correlationId, $"DocumentClientException happened on {retry}/{maxRetries} attempt with status code: '{documentClientException.StatusCode}' and retry after: '{documentClientException.RetryAfter}' ticks.");
+
+                    if ((int)documentClientException.StatusCode != 429)
+                    {
+                        throw;
+                    }
+
+                    await Task.Delay(documentClientException.RetryAfter);
+                }
+                catch (AggregateException aggregateException)
+                {
+                    if (!(aggregateException.InnerException is DocumentClientException))
+                    {
+                        throw;
+                    }
+
+                    var documentClientException = (DocumentClientException)aggregateException.InnerException;
+
+                    _logger.Error(correlationId, $"AggregateException happened on {retry}/{maxRetries} attempt with status code: '{documentClientException.StatusCode}' and retry after: '{documentClientException.RetryAfter}' ticks.");
+
+                    if ((int)documentClientException.StatusCode != 429)
+                    {
+                        throw;
+                    }
+
+                    await Task.Delay(documentClientException.RetryAfter);
                 }
                 catch (Exception exception)
                 {

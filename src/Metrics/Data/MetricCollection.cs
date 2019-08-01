@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PipServices.Azure.Persistence.Data
+namespace PipServices.Azure.Metrics.Data
 {
     public class MetricCollection
     {

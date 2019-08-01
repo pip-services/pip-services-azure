@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace PipServices.Azure.Persistence.Data
+namespace PipServices.Azure.Metrics.Data
 {
     [DataContract]
     public class MetricValue

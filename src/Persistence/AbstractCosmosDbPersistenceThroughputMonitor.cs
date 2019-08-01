@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-using PipServices.Azure.Persistence.Data;
+using PipServices.Azure.Metrics.Data;
 using PipServices.Azure.Metrics;
 using PipServices.Commons.Config;
 using PipServices.Commons.Lock;

@@ -2,7 +2,7 @@
 using PipServices.Commons.Refer;
 using PipServices.Commons.Config;
 using PipServices.Commons.Log;
-using PipServices.Azure.Persistence.Data;
+using PipServices.Azure.Metrics.Data;
 
 using System;
 using System.Collections.Generic;

@@ -219,7 +219,14 @@ namespace PipServices.Azure.Persistence
                     }
                 }
 
-                // 3. Update offer (new throughput)
+                // 3. Verify existing throughput
+                if (throughput.Equals(offerEntity.Content.OfferThroughput))
+                {
+                    Logger.Trace(correlationId, $"UpdateThroughputAsync: Skip to update throughput of collection '{CollectionName}' with the same throughput: '{throughput}'.");
+                    return await Task.FromResult(true);
+                }
+
+                // 4. Update offer (new throughput)
                 offerEntity.Content.OfferThroughput = throughput;
                 client = UpdateHttpClientWithHeader("PUT", "offers", $"{offerEntity.Id.ToLower()}");
                 {
