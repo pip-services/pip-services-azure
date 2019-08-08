@@ -1,6 +1,6 @@
 # Azure components for Pip.Services in .NET Changelog
 
-## <a name="2.2.0-2.2.11"></a> 2.2.0-2.2.11 (2019-08-01)
+## <a name="2.2.0-2.2.12"></a> 2.2.0-2.2.12 (2019-08-08)
 * **persistence** CosmosDB MongoDB partition persistence
 * **persistence** CosmosDB Throughput Monitor
 * **metrics** CosmosDB Metrics Service
