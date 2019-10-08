@@ -46,8 +46,12 @@ namespace PipServices.Azure.Persistence
         protected abstract string[] CollectionNames { get; } 
         protected string InternalCollectionNames => string.Join(",", CollectionNames);
 
+        private ConfigParams _configParams;
+
         public virtual void Configure(ConfigParams config)
         {
+            _configParams = config;
+
             Enabled = config.GetAsBooleanWithDefault("parameters.enabled", true);
             TimerInterval = config.GetAsNullableInteger("parameters.timer_interval") ?? DefaultTimerInterval;
             DelayInterval = config.GetAsNullableInteger("parameters.delay_interval") ?? DefaultDelayInterval;
@@ -57,21 +61,29 @@ namespace PipServices.Azure.Persistence
 
             ResourceGroup = config.GetAsString("parameters.resource_group");
             ConnectionUri = config.GetAsString("parameters.connection_uri");
-
-            var mongoDbConnectionUrl = new MongoUrlBuilder(ConnectionUri);
-            AccountName = mongoDbConnectionUrl.Username;
-            AccessKey = mongoDbConnectionUrl.Password;
-            DatabaseName = mongoDbConnectionUrl.DatabaseName;
-
-            _timer = new FixedRateTimer(PerformMonitorAsync, TimerInterval, DelayInterval);
         }
 
         public virtual void SetReferences(IReferences references)
         {
-            _metricsService = references.GetOneRequired<ICosmosDbMetricsService>(new Descriptor("pip-services", "metrics-service", "*", "*", "*"));
-            _lock = references.GetOneRequired<ILock>(new Descriptor("pip-services", "lock", "*", "*", "*"));
+            try
+            {
+                _logger.SetReferences(references);
 
-            _logger.SetReferences(references);
+                var mongoDbConnectionUrl = new MongoUrlBuilder(ConnectionUri);
+                AccountName = mongoDbConnectionUrl.Username;
+                AccessKey = mongoDbConnectionUrl.Password;
+                DatabaseName = mongoDbConnectionUrl.DatabaseName;
+
+                _metricsService = references.GetOneRequired<ICosmosDbMetricsService>(new Descriptor("pip-services", "metrics-service", "*", "*", "*"));
+                _lock = references.GetOneRequired<ILock>(new Descriptor("pip-services", "lock", "*", "*", "*"));
+
+                _timer = new FixedRateTimer(PerformMonitorAsync, TimerInterval, DelayInterval);
+            }
+            catch (Exception exception)
+            {
+                _logger.Error("AbstractCosmosDbPersistenceThroughputMonitor", exception,
+                    $"Failed to configure the CosmosDb persistence throughput monitor with parameters '{_configParams}'.");
+            }
         }
 
         public async virtual void PerformMonitorAsync()
@@ -171,7 +183,9 @@ namespace PipServices.Azure.Persistence
             }
 
             var recommendedThroughput = CosmosDbThroughputHelper.GetRecommendedThroughput(partitionCount, maximumRequestUnitValue, MinimumThroughput, MaximumThroughput);
-            _logger.Info(correlationId, $"PerformUpdateThroughputAsync: Recommended throughput: '{recommendedThroughput}' for collection '{collectionName}' based on '{groupedMetrics.Key}': '{maximumRequestUnitValue}' with partition count: '{partitionCount}'.");
+            _logger.Info(correlationId, $"PerformUpdateThroughputAsync for collection '{collectionName}': recommended throughput '{recommendedThroughput}' " +
+                $"based on '{groupedMetrics.Key}': '{maximumRequestUnitValue}' " +
+                $"with partition count '{partitionCount}' and throughput range '[{MinimumThroughput}, {MaximumThroughput}]'.");
 
             // 3. Perform updating throughput of CosmosDB collection by recommended value
             await PerformUpdateThroughputAsync(correlationId, collectionName, recommendedThroughput);
